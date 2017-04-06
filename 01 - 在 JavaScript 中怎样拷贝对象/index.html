@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test</title>
+  <script src="cloner.js"></script>
+</head>
+<body>
+<script>
+  const a = {
+    a: 1,
+    b: 2,
+  };
+
+  const b = {
+    a: 4,
+    c: 3
+  };
+
+  cloner.shallow.merge(b, a);
+
+  console.log(b);
+  console.log(a);
+</script>
+</body>
+</html>
