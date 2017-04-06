@@ -31,7 +31,7 @@ const b = {shallow: {test: 'OK'}};
 // 深拷贝举例
 const a = {};
 a.shallow = {};
-a.shallow.test = 'NOPE;
+a.shallow.test = "NOPE";
 
 // 这时，对象 b 就不会受到影响
 b.shallow.test;  // "OK"
