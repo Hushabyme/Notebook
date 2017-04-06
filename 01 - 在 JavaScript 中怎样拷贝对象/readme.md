@@ -83,9 +83,6 @@ const special = {
 
 special[uid] = Math.random();
 
-special[uid] = Math.random();
-
-
 const notSpecial = Object.assign({}, special);
 
 notSpecial.counter;  // 如果 `counter` 在 `next` 之前被拷贝则为 1
