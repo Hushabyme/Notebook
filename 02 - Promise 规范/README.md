@@ -28,17 +28,17 @@
 
 一个 promise 一定拥有下述三种状态中的一种：**pending** 、**fulfilled** 或 **rejected** 。
 
-2.1.1. 当处于 pending 状态时，promise 拥有下述行为：
+2.1.1. **当处于 pending 状态时，promise 拥有下述行为：** 
 
 　2.1.1.1. 可以过渡到 fulfilled 或 rejected 两种状态中的一种。
 
-2.1.2. 当处于 fulfilled 状态时，promise 拥有下述行为：
+2.1.2. **当处于 fulfilled 状态时，promise 拥有下述行为：** 
 
 　2.1.2.1. 一定不会再过渡到其它两个状态中的一种。
 
 　2.1.2.2. 一定拥有一个值，并且该值不会改变。
 
-2.1.3. 当处于 rejected 状态时，promise 拥有下述行为：
+2.1.3. **当处于 rejected 状态时，promise 拥有下述行为：** 
 
 　2.1.3.1. 一定不会再过渡到其它两个状态中的一种。
 
