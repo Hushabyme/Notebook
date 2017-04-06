@@ -21,6 +21,17 @@
 
   console.log(b);
   console.log(a);
+
+  console.log(Object.getPrototypeOf(a));  // Object {}
+  console.log(Object.getPrototypeOf([1, 2]));  // Array []
+  console.log(Object.create(Object.getPrototypeOf(a)));
+
+  console.log(Object.defineProperties(a, {
+    c: {
+      value: 3
+    }
+  }));
 </script>
+
 </body>
 </html>

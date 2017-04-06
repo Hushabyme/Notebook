@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90de4426-471c-4e04-96bd-d45c75bc93f7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/cloner.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/cloner_original.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/Object.assign.js" afterPath="$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/test/Object.assign.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/Object.assign_side_effect.js" afterPath="$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/test/Object.assign_side_effect.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/assign.js" afterPath="$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/test/assign.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/ownKeys.js" afterPath="$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/test/ownKeys.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/cloner.js" afterPath="$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/cloner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/index.html" afterPath="$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,48 +17,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ownKeys.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/test/ownKeys.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cloner.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/cloner.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4422">
-              <caret line="134" column="30" lean-forward="true" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cloner_original.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/cloner_original.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4446">
-              <caret line="143" column="44" lean-forward="false" selection-start-line="143" selection-start-column="44" selection-end-line="143" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -259,12 +212,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1491443765526</updated>
-      <workItem from="1491443766977" duration="7958000" />
+      <workItem from="1491443766977" duration="10366000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7958000" />
+    <option name="totallyTimeSpent" value="10366000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="7" />
@@ -322,6 +275,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/cloner.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="28" column="2" lean-forward="false" selection-start-line="28" selection-start-column="2" selection-end-line="32" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/test/ownKeys.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -334,22 +303,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4446">
           <caret line="143" column="44" lean-forward="false" selection-start-line="143" selection-start-column="44" selection-end-line="143" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01 - 在 JavaScript 中怎样拷贝对象/cloner.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4422">
-          <caret line="134" column="30" lean-forward="true" selection-start-line="134" selection-start-column="30" selection-end-line="134" selection-end-column="30" />
           <folding />
         </state>
       </provider>

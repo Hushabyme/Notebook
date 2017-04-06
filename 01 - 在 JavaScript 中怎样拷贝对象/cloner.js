@@ -12,7 +12,7 @@ const cloner = (function (Object) {
     isArray               = Array.isArray,
     create                = Object.create,
     defineProp            = Object.defineProperty,
-    defineProps            = Object.defineProperties,
+    defineProps           = Object.defineProperties,
     getOwnPropDes         = Object.getOwnPropertyDescriptor,
     getOwnPropNames       = Object.getOwnPropertyNames,
     getOwnPropSymbols     = Object.getOwnPropertySymbols,
@@ -141,16 +141,16 @@ const cloner = (function (Object) {
   };
 
   const merge = function (target) {
-    let source = null,
-        keys = null,
-        key = null,
-      value = null,
-      targetValue = null,
-      obj = null,
-      deep = this.valueOf(),
-      objs = {},
-      i = 0,
-      a = 1;
+    let source      = null,
+        keys        = null,
+        key         = null,
+        value       = null,
+        targetValue = null,
+        obj         = null,
+        deep        = this.valueOf(),
+        objs        = {},
+        i           = 0,
+        a           = 1;
 
     for(source, keys, key, value, targetValue, obj, deep, objs, i, a;
         a < arguments.length;
