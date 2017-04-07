@@ -106,7 +106,7 @@ readyState 属性的 getter 必须从第一列的单元格中的值为上下文�
 |   状态   |     状态码      | 描述                                       |
 | :----: | :----------: | :--------------------------------------- |
 | unsent | UNSENT(数值为0) | 该对象已经被创建。                                |
-| opened | OPENED(数值为1) | <font color=#FF0000>open()</font>方法已经成功被调用。 在这种状态请求期间，可以使用setRequestHeader() 设置头文件，并且可以使用 send() 方法初始化获取文件。 |
+| opened | OPENED(数值为1) | <span color="red">open()</span>方法已经成功被调用。 在这种状态请求期间，可以使用setRequestHeader() 设置头文件，并且可以使用 send() 方法初始化获取文件。 |
 |        |              |                                          |
 |        |              |                                          |
 |        |              |                                          |
