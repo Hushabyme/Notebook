@@ -113,6 +113,8 @@ readyState 属性的 getter 必须从第一列的单元格中的值为上下文�
 
 #### 2.5. 请求（Request）
 
+
+
 ### 2.1. open() 方法
 
 每个 XMLHttpRequest 对象具有以下请求相关概念：**请求方法，请求URL，请求头，请求主体，同步标志，上传完成标志和上传监听标志** 。	
@@ -133,7 +135,7 @@ readyState 属性的 getter 必须从第一列的单元格中的值为上下文�
 >
 > 如果 *async* 为 false，目前的全局对象是 **Window** 对象，并且 timeout 属性不为零活 responseType 属性不是空字符串，则抛出  **InvalidAccessError** 异常。
 
-**open (*method, url*) **和 **open (method, url, async, username, password)** 方法在调用时，将执行以下步骤：
+**open (*method, url*)** 和 **open (method, url, async, username, password)** 方法在调用时，将执行以下步骤：
 
 1. 如果如果上下文对象的相关设置对象（每个全局对象都与相应的环境设置对象一起创建，那就是它的相关设置对象）具有负责任的文档（分配由使用此环境设置对象的脚本执行的操作的文档），并且它不完全活动，则抛出 InvalidStateError 异常。
 
@@ -158,7 +160,7 @@ readyState 属性的 getter 必须从第一列的单元格中的值为上下文�
 
 10. 终止请求。
 
-  > 此时可以提取数据。
+ > 此时可以提取数据。
 
 11. 设置与对象关联的变量，如下所示：
 
@@ -175,6 +177,8 @@ readyState 属性的 getter 必须从第一列的单元格中的值为上下文�
 
     1. 设置状态为 *opened* 。
     2. 触发名为 readystatechange 的事件。
+
+
 
 ### 2.2. setRequestHeader() 方法
 
@@ -219,6 +223,8 @@ client.send();
 // X-Test: one, two
 ```
 
+
+
 ### 2.3 timeout 属性
 
 > *client* . timeout
@@ -234,6 +240,8 @@ timeout 属性必须返回它的值。它的初始值一定为零。
 2. 设置它的值为一个新的值。
 
    > 这意味着在 fetching 进行时可以设置超时属性。如果发生这种情况，它将仍然相对于开始的 fetching 来测量。
+
+
 
 ### 2.4. withCredentials 属性
 
@@ -255,6 +263,8 @@ withCredentials 属性必须返回它的值，并且初始值为 false。
 
    > 注意：当获取同源资源时，withCredentials属性不起作用。
 
+
+
 ### 2.5. upload 属性
 
 > *client* . upload
@@ -264,6 +274,8 @@ withCredentials 属性必须返回它的值，并且初始值为 false。
 upload 属性必须返回关联的 XMLHttpRequestUpload 对象。
 
 > 注意：如前所述，每个 XMLHttpRequest 对象都有一个关联的 XMLHttpRequestUpload 对象。
+
+
 
 ### 2.6. send() 方法
 
@@ -359,7 +371,7 @@ send(*body*) 方法执行时，会执行以下步骤：
 
 10. 如果同步标志未设置，则执行以下步骤：
 
-  1. 触发使用 0 和 0 的名称为 loadstart  的 progress 事件。
-  2. 如果 upload 完成标志未设置，并且设置了 upload 监听器标志，则在XMLHttpRequestUpload 对象上使用 0 和 *req* 的正文字节触发名为 loadstart 的进度事件。
-  3. 如果当前状态不为 *opened* 或者 send() 标志未设置，则返回。
-  4. ​
+ 1. 触发使用 0 和 0 的名称为 loadstart  的 progress 事件。
+ 2. 如果 upload 完成标志未设置，并且设置了 upload 监听器标志，则在XMLHttpRequestUpload 对象上使用 0 和 *req* 的正文字节触发名为 loadstart 的进度事件。
+ 3. 如果当前状态不为 *opened* 或者 send() 标志未设置，则返回。
+ 4. ​
