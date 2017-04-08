@@ -204,7 +204,7 @@ setRequestHeader (*name, value*) 方法将执行以下步骤：
 
    > 注意：一个空的字节序列表示一个空的头部值。
 
-5. 如果 *name* 设置为被禁止的头名称，则终止这些步骤。
+5. 如果 *name* 设置为被禁止的头名称时，则终止这些步骤。
 
 6. 将 *name/value* 组合进请求头中。
 
@@ -371,7 +371,7 @@ send(*body*) 方法执行时，会执行以下步骤：
 
 10. 如果同步标志未设置，则执行以下步骤：
 
- 1. 触发使用 0 和 0 的名称为 loadstart  的 progress 事件。
- 2. 如果 upload 完成标志未设置，并且设置了 upload 监听器标志，则在XMLHttpRequestUpload 对象上使用 0 和 *req* 的正文字节触发名为 loadstart 的进度事件。
- 3. 如果当前状态不为 *opened* 或者 send() 标志未设置，则返回。
- 4. ​
+11.  触发使用 0 和 0 的名称为 loadstart  的 progress 事件。
+12.  如果 upload 完成标志未设置，并且设置了 upload 监听器标志，则在XMLHttpRequestUpload 对象上使用 0 和 *req* 的正文字节触发名为 loadstart 的进度事件。
+13.  如果当前状态不为 *opened* 或者 send() 标志未设置，则返回。
+14.  ​
