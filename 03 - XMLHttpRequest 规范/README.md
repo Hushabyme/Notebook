@@ -369,81 +369,81 @@ send(*body*) 方法执行时，会执行以下步骤：
 
 10. 如果同步标志未设置，则执行以下步骤：
 
-   1. 触发使用 0 和 0 的名称为 loadstart  的 progress 事件。
+  1. 触发使用 0 和 0 的名称为 loadstart  的 progress 事件。
 
-   2. 如果 upload 完成标志未设置，并且设置了 upload 监听器标志，则在XMLHttpRequestUpload 对象上使用 0 和 *req* 的正文字节触发名为 loadstart 的进度事件。
+  2. 如果 upload 完成标志未设置，并且设置了 upload 监听器标志，则在XMLHttpRequestUpload 对象上使用 0 和 *req* 的正文字节触发名为 loadstart 的进度事件。
 
-   3. 如果当前状态不为 *opened* 或者 send() 标志未设置，则返回。
+  3. 如果当前状态不为 *opened* 或者 send() 标志未设置，则返回。
 
-   4. 获取 *req* 。处理在下面的网络任务源上排队的任务。
+  4. 获取 *req* 。处理在下面的网络任务源上排队的任务。
 
-      并行运行这些子步骤：
+     并行运行这些子步骤：
 
-      1. 等待，直到 *req* 完成标志被设置或者
-         1. timeout 属性值从这些子程序开始已经过去的毫秒数
-         2. 当 timeout 属性值不为零。
+     1. 等待，直到 *req* 完成标志被设置或者
+        1. timeout 属性值从这些子程序开始已经过去的毫秒数
+        2. 当 timeout 属性值不为零。
 
-      要处理 *request*  请求主体，就会运行以下子步骤：
+     要处理 *request*  请求主体，就会运行以下子步骤：
 
-      1. 如果从上次调用这些子程序以来，如果不是大约 50ms 已经过去，请终止这些子程序。
+     1. 如果从上次调用这些子程序以来，如果不是大约 50ms 已经过去，请终止这些子程序。
 
-      2. 如果 upload 监听标志被设置，那么触发一个名为 progress 的进度事件在 `XMLHttpRequestUpload` 对象上，它带着 *request*  的主体的传输字节和 *request*  的正文的总字节。
+     2. 如果 upload 监听标志被设置，那么触发一个名为 progress 的进度事件在 `XMLHttpRequestUpload` 对象上，它带着 *request*  的主体的传输字节和 *request*  的正文的总字节。
 
-         > 注意：只有当发送新的字节时，才会调用这些子信息。
+        > 注意：只有当发送新的字节时，才会调用这些子信息。
 
-      如果要处理 *request*  的请求终端请求，请运行以下子步骤：
+     如果要处理 *request*  的请求终端请求，请运行以下子步骤：
 
-      1. 设置 upload 完成标志。
-      2. 如果 upload 监听标志未设置，然后终止这些子步骤。
-      3. 使 *transmitted* 为  *request*  的主体的传输字节。
-      4. 使 *length* 为 *request*  的主体的总子节。
-      5. 在携带 *transmitted* 和 *length* 的 `XMLHttpRequestUpload` 对象上触发一个名为 progress 的进度事件。
-      6. 在携带 *transmitted* 和 *length* 的 `XMLHttpRequestUpload` 对象上触发一个名为 load的进度事件。
-      7. 在携带 *transmitted* 和 *length* 的 `XMLHttpRequestUpload` 对象上触发一个名为 loadend 的进度事件。
+     1. 设置 upload 完成标志。
+     2. 如果 upload 监听标志未设置，然后终止这些子步骤。
+     3. 使 *transmitted* 为  *request*  的主体的传输字节。
+     4. 使 *length* 为 *request*  的主体的总子节。
+     5. 在携带 *transmitted* 和 *length* 的 `XMLHttpRequestUpload` 对象上触发一个名为 progress 的进度事件。
+     6. 在携带 *transmitted* 和 *length* 的 `XMLHttpRequestUpload` 对象上触发一个名为 load的进度事件。
+     7. 在携带 *transmitted* 和 *length* 的 `XMLHttpRequestUpload` 对象上触发一个名为 loadend 的进度事件。
 
-      如果要处理 *response* 的响应，则运行以下子步骤：
+     如果要处理 *response* 的响应，则运行以下子步骤：
 
-      1. 如果停止 timeout 标志未设置，则设置停止 timeout 标志。
+     1. 如果停止 timeout 标志未设置，则设置停止 timeout 标志。
 
-      2. 为 *response* 设置响应。
+     2. 为 *response* 设置响应。
 
-      3. 为 *response* 处理错误信息。
+     3. 为 *response* 处理错误信息。
 
-      4. 如果响应产生了网络错误，则返回。
+     4. 如果响应产生了网络错误，则返回。
 
-         > 注：网络错误是指 status 始终为 0 的状态消息，状态消息始终为空字节序列，头列表始终为空，主体始终为空，头列表始终为空。
+        > 注：网络错误是指 status 始终为 0 的状态消息，状态消息始终为空字节序列，头列表始终为空，主体始终为空，头列表始终为空。
 
-      5. 设置 state 为 *headers received* 。
+     5. 设置 state 为 *headers received* 。
 
-      6. 触发名为 readystatechange 事件。
+     6. 触发名为 readystatechange 事件。
 
-      7. 如果 state 不为 *headers received* ，则返回。
+     7. 如果 state 不为 *headers received* ，则返回。
 
-      8. 如果 *response* 的主体为空，那么则运行处理响应终端（response end-of-body）并返回。
+     8. 如果 *response* 的主体为空，那么则运行处理响应终端（response end-of-body）并返回。
 
-      9. 使 *reader* 为从 *response* 的主体的 stream 中得到的 reader 的结果。
+     9. 使 *reader* 为从 *response* 的主体的 stream 中得到的 reader 的结果。
 
-         > 注意：此操作将不会抛出异常。
+        > 注意：此操作将不会抛出异常。
 
-      10. 使 *read* 为从携带 *reader* 的 *response* 的主体中的 reading of chunk 的结果。
+     10. 使 *read* 为从携带 *reader* 的 *response* 的主体中的 reading of chunk 的结果。
 
-          当 *read* 为带着 `done` 属性为 false 并且 `value` 属性为 `Uint8Array` 对象的对象完成时，运行这些子步骤，然后再次运行上面的子步骤：
+        当 *read* 为带着 `done` 属性为 false 并且 `value` 属性为 `Uint8Array` 对象的对象完成时，运行这些子步骤，然后再次运行上面的子步骤：
 
-          1. 添加 `value` 属性给 received bytes。
+        1. 添加 `value` 属性给 received bytes。
 
-          2. 如果从上次调用这些子程序以来，如果不是大约 50ms 已经过去，请终止这些子程序。
+        2. 如果从上次调用这些子程序以来，如果不是大约 50ms 已经过去，请终止这些子程序。
 
-          3. 如果 state 为 *headers received* ，设置 state 为 *loading* 状态。
+        3. 如果 state 为 *headers received* ，设置 state 为 *loading* 状态。
 
-          4. 触发名为 readystatechange 事件。
+        4. 触发名为 readystatechange 事件。
 
-          5. 触发一个名为 progress 的进度事件在 `XMLHttpRequestUpload` 对象上，它带着 *request*  的主体的传输字节和 *request*  的正文的总字节。
+        5. 触发一个名为 progress 的进度事件在 `XMLHttpRequestUpload` 对象上，它带着 *request*  的主体的传输字节和 *request*  的正文的总字节。
 
-             > 注意：仅当传输新的字节时，才会调用这些子条目。
+           > 注意：仅当传输新的字节时，才会调用这些子条目。
 
-      当 *read* 带着 `done` 属性为 true 的对象完成（fulfilled）时，则运行 *response* 的处理响应终端。
+     当 *read* 带着 `done` 属性为 true 的对象完成（fulfilled）时，则运行 *response* 的处理响应终端。
 
-      当 *read* 带着异常失败（rejected）时，则运行 *response* 的处理响应终端。
+     当 *read* 带着异常失败（rejected）时，则运行 *response* 的处理响应终端。
 
 11. 否则，如果同步标志设置时，则运行以下子步骤：
 
@@ -471,7 +471,7 @@ send(*body*) 方法执行时，会执行以下步骤：
 4. 如果同步标志未设置，则使用 *response*  更新响应主体。
 5. 使 *transmitted* 为  *request*  的主体的传输字节。
 6. 使 *length* 为 *request*  的主体的总子节。
-7.  *transmitted* 和 *length* 触发一个名为 progress 的进度事件。
+7. *transmitted* 和 *length* 触发一个名为 progress 的进度事件。
 8. 设置 state 为 `done` 。
 9. 不设置 send() 标志。
 10. 触发 readystatechange 事件。
@@ -635,3 +635,261 @@ XMLHttpRequest 对象与 **response object** （一个对象，failure 或 null�
 
 1. 设置 response object 为 new ArrayBuffer 对象呈现为接收的字节。如果此步骤抛出异常，则设置 response object 为 failure 并且返回 null。
 2. 返回 response object 。
+
+**blob response** 遵循以下步骤返回值：·
+
+1. 设置 response object 为 new Blob对象呈现为接收的字节，带着 final MIME 类型。
+2. 返回 response object。
+
+**document response** 遵循以下步骤返回值：
+
+1. 如果 response 的响应主体为 null，则返回 null。
+
+2. 如果 final MIMIE 类型不为 'text/html'、'text/xml'、'application/xml' 或结尾不是 '+xml'，则返回 null。
+
+3. 如果 responseType 为空字符串并且 final MIMIE 类型是 'text/html'，则返回 null。
+
+   > 注意：这仅限于 responseType 为 "document"，以防止破坏旧版内容。
+
+4. 如果 final MIME 类型为 'text/html'，则执行下列子步骤：
+
+   1. 使 *charset* 为 final charset。
+   2. 如果 *charset* 为 null，则预扫描（prescan）第一个 1024 字节的接受的字节，并且若未成功终止，则使 *charset* 为返回值。
+   3. 如果 *charset* 为 null，则设置 *charset* 为 utf-8。
+   4. 使 *document* 为 document，代表解析收到字节的结果，遵循 HTML 标准中规定的规则，禁用脚本的 HTML 解析器和已知的确定编码 *charset* 。
+   5. 将 *document* 标记为 HTML 文档。
+
+5. 否则，使 *document* 为表示在接收到的字节上禁用 XML 脚本支持的 XML 解析器的结果的文档。如果失败（不支持的字符编码，命名空间良好的错误等），则返回 null。
+
+6. 如果 *charset* 为 null，则设置 *charset* 为 utf-8。
+
+7. 设置 *document* 的编码为 *charset* 。
+
+8. 设置 *document* 的 content type 为 final MIME 类型。
+
+9. 设置 *document* 的 URL 为 response 的 url、
+
+10. 设置 *document* 的 origin 为上下文对象的相关设置对象的 origin 。
+
+11. 设置响应对象为 *document* 并且返回它。
+
+**JSON response** 遵循以下步骤返回值：
+
+1. 如果 response 的响应主体为 null，则返回 null。
+2. 使 *JSON text* 为 运行在接受的字节上的 utf-8 编码的结果。
+3. 让 JSON 对象是调用 JSON 对象的 parse 属性的初始值的结果，*JSON text* 作为其唯一的参数。如果抛出异常，返回 null。
+4. 设置 response 对象为 *JSON* 对象并返回。
+
+**text response** 遵循以下步骤返回值：
+
+1. 如果 response 主体为 null，则返回空字符串。
+2. 使 *charset* 为 final charset。
+3. 如果 responseType 是空字符串，则 charset 为 null，final MIME 类型为 'text / xml'，'application / xml'，或以 '+xml' 结尾，然后使用 XML 规范中规定的规则来确定编码。使 *charset* 成为确定（determined ）的编码。 
+4. 如果 *charset* 为 null，则设置 *charset* 为 utf-8。
+5. 使用后备的编码 *charset* 集返回在接收字节上运行解码的结果。
+
+### 2.6.7. overrideMimeType() 方法
+
+> *client* . overrideMimeType(*mime*)
+>
+> 就像 'Content-Type' 的响应头是 *mime* 一样。
+>
+> 如果 state 为 *loading* 或 *done* 时，抛出 InvalidStateError 异常。
+
+overrideMimeType() 方法执行以下步骤：
+
+1. 如果 state 为  *loading* 或 *done* 时，抛出 InvalidStateError 异常。
+2. 设置 override MIME 类型为 'application/octet-stream'。
+3. 如果 mime 为 parsable MIME 类型，则设置 override MIME 类型为它的 MIME 类型的一部分。
+4. 如果 override MIME 类型有 'charset' 参数，则设置 override charset 为它自己的值。
+
+### 2.6.8. responseType 属性
+
+> *client* .  responseType [ = value ]
+>
+> 返回 response 类型。
+>
+> 可以被设置改变的 response 类型。值为：空字符串（默认），"`arraybuffer`", "`blob`", "`document`", "`json`", 和 "`text`"。
+>
+> 当设置时：设置 "document" 为忽略如果当前全局对象不为 WIndow 对象。
+>
+> 当设置时：如果 state 为 *loading* 或 *done* 时，抛出 InvalidStateError 异常。
+>
+> 当设置时：如果同步标志被设置并且当前全局对象为 Window 对象时，抛出 InvalidStateError 异常。
+
+responseType 属性会返回它的值。初始值为空字符串。
+
+设置 responseType 属性将遵循以下步骤：
+
+1. 如果当前全局对象不为 Window 对象并且所给值为 "document" 时，终止此步骤。
+2. 如果 state 为 *loading* 或 *done* 时，抛出 InvalidStateError 异常。
+3. 如果同步标志被设置并且当前全局对象为 Window 对象时，抛出 InvalidStateError 异常。
+4. 设置 responseType 属性值为所给的值。
+
+### 2.6.9. response 属性
+
+> *client* . response
+>
+> 返回 response 的主体。
+
+response 属性将遵循以下步骤：
+
+　如果 responseType 为空字符串或 "text" 时
+
+	1. 如果 state 不为 *loading* 或 *done* 时，返回空字符串。
+	2. 返回 text response。
+
+　否则
+
+　1. 如果 state 不为 *done* ，返回 null。
+　2. 如果 response 对象为 failure，返回 null。
+　3. 如果 response 对象为非空（ non-null），则返回它。
+　4. 如果 responseType 是 "`arraybuffer`"，返回 arraybuffer response。
+　5. 如果 responseType 是 "`blob`"，返回 blob response。
+　6. 如果  responseType 是 "`document`"，返回 document response。
+　7. 如果  responseType 是 "`json`"，返回 json response。
+
+### 2.6.10. responseText 属性
+
+> *client* . responseText
+>
+> 返回 text response。
+>
+> 如果 responseType 不为空字符串或 "text" ，抛出 InvalidStateError 异常。
+
+responseText 属性遵循以下步骤返回结果：
+
+1. 如果 responseText 属性不为空字符串或 "text" ，抛出 InvalidStateError 异常。
+2. 如果 state 不为 *loading* 或 *done* 时，返回空字符串。
+3. 返回  text response。
+
+### 2.6.11. responseXML 属性
+
+> *client* . responseXML
+>
+> 如果 responseType 不为空字符串或 "document" ，抛出 InvalidStateError 异常。
+
+responseXML 属性遵循以下步骤返回结果：
+
+1. 如果 responseXML 属性不为空字符串或 "document" ，抛出 InvalidStateError 异常。
+2. 如果 state 不为 *done*，返回 null。
+3. 如果 response 对象不为空（non-null），返回它。
+4. 返回 document response。
+
+#### 2.7 事件概述
+
+在 XMLHttpRequest 和/或 XMLHttpRequestUpload 对象上调度以下事件：
+
+|    Event name    |   Interface   | Dispatched when…                |
+| :--------------: | :-----------: | :------------------------------ |
+| readystatechange |     Event     | readyState 属性改变值，除了当它变为 UNSENT。 |
+|    loadstart     | ProgressEvent | 开始获取（fetch）。                    |
+|     progress     | ProgressEvent | 传输数据。                           |
+|      abort       | ProgressEvent | 当获取已被中止时。例如，通过调用abort() 方法。     |
+|      error       | ProgressEvent | 获取失败。                           |
+|       load       | ProgressEvent | 获取成功。                           |
+|     timeout      | ProgressEvent | 指定的超时时间在获取完成之前已经过去了。            |
+|     loadend      | ProgressEvent | 获取完成（成功或失败）。                    |
+
+## 3. FormData 接口（Interface `FormData`）
+
+FormData 对象表示条目（entries）的有序列表。每个条目由名称（name）和值（value）组成。
+
+为了与其他算法进行交互，条目的类型是 “string”，如果它的值是一个字符串，否则为 “file”。如果条目的类型为“file”，则其文件名是空字符串，如果值不是 File 对象，否则其文件名是条目值的 name 属性的值。
+
+创建一个带有 *name*、*value* 的 entry ，并且有用可选的 *filename* ，执行以下步骤：
+
+1. 使 *entry* 为新的 entry。
+2. 设置 *entry* 的 name 为 *name*。
+3. 如果 *value* 为 Blob 对象而不是 File 对象，则设置 *value* 为新的 File 对象，表现为同样的字节，name 属性值为 "blob"。
+4. 如果 *value*（now） 为 File 对象并且 *filename* 为所给的值，则设置 *value* 为新的 File 对象，表现为同样的字节数，name 属性值为 filename。
+5. 设置 *entry* 的值为 *value*。
+6. 返回 *entry*。
+
+FromData(*form*) 构造函数将执行下列操作：
+
+1. 使  *fd* 为 new FormData 对象。
+2. 如果 *form* 为所给的值，则设置 *fd* 的 entries 为 *form* 的构建表单数据集（constructing the form data set）的结果。
+3. 返回 *fd*。
+
+**append(*name*, *value*)** 和 **append(*name*, *blobValue*, *filename*)** 方法被调用时，会执行以下步骤：
+
+1. 使 *value* 为所给的 *value* 值，否则为 *blobValue* 。
+2. 使 *entry* 为所给的 *name* 、 *blobValue* 和 *filename* 的创建 entry 的结果（就是上面的步骤）。
+3. 添加 *entry* 到 entries 列表的上下文对象中。
+
+**delete(*name*)** 方法被调用时，将移除所有 entries 中名称为 *name* 的项。
+
+**get(*name*)** 方法被调用时，将返回第一个 entry 中名称为  *name* 的项的 value ，否则返回 null。
+
+**getAll(*name*)** 方法被调用时，返回所有 entries 中名称为  *name* 的项的 values，按照列表的序列，否则返回空序列。
+
+**has(*name*)** 方法被调用时，如果 entry 中包含名称为  *name* 的项的 value，则返回 true，否则为 false。
+
+**set(*name*, *value*)** 和 **set(*name*, *blobValue*, *filename*)** 方法被调用时，将执行以下步骤：
+
+1. 使 value 为所给的 *value* 值，否则为 *blobValue* 。
+2. 使 *entry* 为所给的 *name* 、 *blobValue* 和 *filename* 的创建 entry 的结果（就是上面的步骤）。
+3. 否则，添加 *entry* 到 entries 的列表中的上下文里。
+
+## 4. ProgressEvent 接口（Interface `ProgressEvent`）
+
+使用 ProgressEvent 界面的事件表示某种进展。
+
+lengthComputable，loaded 和 total 属性返回它们被初始化的值。
+
+### 4.1. 使用 ProgressEvent 接口触发事件 
+
+要在 *target* 中触发名为 *e* 的进度事件，就要给定 *transmitted* 和 *length*，这意味着触发在 *target* 中触发名为 *e* 的事件就要使用 ProgressEvent，其中 loaded 属性初始化为 *transmitted* ，并且如果 *length* 不为 0，*lengthComputable* 属性初始化为 true 并且 total 属性初始化为 *length*。
+
+### 4.2. 使用ProgressEvent接口的事件的建议名称 
+
+下表列出了使用 ProgressEvent 接口与事件一起使用的建议类型属性值。规范编辑可以根据具体情况自由调整细节，但强烈建议您与 WHATWG 社区讨论其使用情况，以确保熟悉该主题的人员的意见。
+
+| attribute value | Description    | Times       | When                                  |
+| --------------- | -------------- | ----------- | ------------------------------------- |
+| loadstart       | 进程开始时          | 一次          | 第一（First）                             |
+| progress        | 在进程进行中         | 一次或多次       | 在 loadstart 被分配后                      |
+| error           | 进程失败时          | 零次或一次（ 相互排斥 | 在最后一个进度已经发出之后。                        |
+| abort           | 进程终止时          | 零次或一次（ 相互排斥 | 在最后一个进度已经发出之后。                        |
+| timeout         | 由于预设时间到期，进度终止。 | 零次或一次（ 相互排斥 | 在最后一个进度已经发出之后。                        |
+| load            | 进程成功时          | 零次或一次（ 相互排斥 | 在最后一个进度已经发出之后。                        |
+| loadend         | 进程已经停止时        | 一次          | 在上述的 error、abort、timeout、load 被分配之后触发 |
+
+ error、abort、timeout、load 这几种事件类型相互排斥。
+
+在整个 Web 平台中，建议为了使所有使用 ProgressEvent 接口的事件一致，error、abort、timeout、load 事件类型将其 `bubbles` 和 `cancelable` 属性初始化为 false。
+
+### 4.3. 安全注意事项
+
+对于跨域请求，某种选择加入，例如在获取标准中定义的 CORS 协议必须在使用ProgressEvent 接口的事件分派之前使用，因为将显示无法获得的信息（例如大小）。
+
+### 4.4. 示例
+
+在此示例中，XMLHttpRequest 与前面部分中定义的概念结合使用，并且 HTML 进度元素一起用于显示获取资源的过程。
+
+```html
+<!DOCTYPE html>
+<title>Waiting for Magical Unicorns</title>
+<progress id=p></progress>
+<script>
+  const progressBar = document.getElementById("p"),
+        client = new XMLHttpRequest();
+  
+  client.open("GET", "magical-unicorns")
+  
+  client.onprogress = function(pe) {
+    if(pe.lengthComputable) {
+      progressBar.max = pe.total
+      progressBar.value = pe.loaded
+    }
+  }
+  
+  client.onloadend = function(pe) {
+    progressBar.value = pe.loaded
+  }
+  
+  client.send()
+</script>
+```
+
