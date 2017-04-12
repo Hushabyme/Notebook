@@ -2,3 +2,5 @@
 
 第一章　[设计模式介绍](https://github.com/Hushabyme/Notebook/tree/master/04%20-%20JavaScript%20%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/01%20-%20%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%BB%8B%E7%BB%8D)
 
+第二章　[Constructor（构造器）模式](https://github.com/Hushabyme/Notebook/tree/master/04%20-%20JavaScript%20%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/02%20-%20Constructor%EF%BC%88%E6%9E%84%E9%80%A0%E5%99%A8%EF%BC%89%E6%A8%A1%E5%BC%8F)
+
