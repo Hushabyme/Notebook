@@ -1,4 +1,4 @@
-# Revealing Module（揭示模块）模式
+# 第四章 Revealing Module（揭示模块）模式
 
 现在，我们已经对 Module 模式有了一定的了解，让我们来看一个稍有改进的版本 —— 揭示模块模式。
 
