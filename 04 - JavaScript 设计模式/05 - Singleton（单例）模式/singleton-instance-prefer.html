@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .show {
+      width: 300px;
+      height: 160px;
+      border: 1px solid black;
+      border-radius: 5px;
+      box-shadow: 0 0 8px gray;
+      margin-top: 8px;
+      transition: all .5s;
+    }
+
+    .hide {
+      display: none;
+      transition: display 1s;
+    }
+  </style>
+</head>
+<body>
+<button id="open">打开</button>
+<button id="close">关闭</button>
+
+<script>
+  class Model {
+    constructor(id, html) {
+      this.html = html;
+      this.id = id;
+      this.open = false;
+    }
+
+    create() {
+      if(!this.open) {
+        const model = document.createElement('div');
+        model.innerHTML = this.html;
+        model.id = this.id;
+        document.body.appendChild(model);
+
+        setTimeout(() => model.classList.add('show'), 0);
+
+        this.open = true;
+      }
+    }
+
+    delete() {
+      if(this.open) {
+        const model = document.getElementById(this.id);
+        model.classList.add('hide');
+        setTimeout(() => document.body.removeChild(model) ,200);
+
+        this.open = false;
+      }
+    }
+  }
+
+  const createInstance = (function() {
+    let instance;
+    return function () {
+      return instance || (instance = new Model('model', '这是一个弹窗'));
+    }
+  }());
+
+  document.querySelector('#open').addEventListener('click', () => {
+    const instance = createInstance();
+    instance.create();
+  });
+
+  document.querySelector('#close').addEventListener('click', () => {
+    const instance = createInstance();
+    instance.delete();
+  });
+</script>
+</body>
+</html>

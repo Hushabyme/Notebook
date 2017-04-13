@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button id="open">打开</button>
+<button id="close">关闭</button>
+
+<script>
+  const createDiv = (function() {
+      const div = document.createElement('div');
+      div.style.width = '300px';
+      div.style.height = '160px';
+      div.style.border = '1px solid black';
+      div.style.display = 'none';
+      document.body.appendChild(div);
+
+      return div;
+  }());
+
+  document.querySelector('#open').addEventListener('click', () => {
+    createDiv.style.display = 'block';
+  });
+
+  document.querySelector('#close').addEventListener('click', () => {
+    createDiv.style.display = 'none';
+  });
+</script>
+</body>
+</html>
