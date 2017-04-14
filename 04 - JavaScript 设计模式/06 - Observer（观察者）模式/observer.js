@@ -79,6 +79,10 @@ class Subject {
   }
 }
 
+class Observer {
+
+}
+
 function extend(obj, extension) {
   for(let key in obj) {
     extension[key] = obj[key];

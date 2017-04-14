@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="observer.js"></script>
+</head>
+<body>
+<button id="addNewObserver">添加新的观察者复选框</button>
+<input id="mainCheckbox" type="checkbox">
+<div id="observerContainer"></div>
+
+<script>
+  const controlCheckbox = document.querySelector('#mainCheckbox');
+  const addBtn = document.querySelector('#addNewObserver');
+  const container = document.querySelector('#observerContainer');
+
+  // 利用 Subject 扩展 controlCheckbox
+  extend(new Subject(), controlCheckbox);
+
+  // 点击 checkbox 会触发通知到观察者上
+  controlCheckbox.onclick = function () {
+    controlCheckbox.Notify(this.checked);
+  };
+
+  addBtn.onclick = AddNewObserver;
+
+  function AddNewObserver() {
+    const check = document.createElement('input');
+    check.type = 'checkbox';
+
+    extend(new Observer(), check);
+
+    check.Update = function (value) {
+      this.checked = value;
+    };
+
+    controlCheckbox.AddObserver(check);
+
+    container.appendChild(check);
+  }
+</script>
+<!--<script src="observer.js"></script>-->
+</body>
+</html>
