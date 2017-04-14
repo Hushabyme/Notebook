@@ -188,7 +188,7 @@ readyState 属性的 getter 必须从第一列的单元格中的值为上下文�
 >
 > 如果 *name* 不是响应头中的名称或 *value* 不是响应头中的值，则抛出 SyntaxError 异常。
 
-> **注意：**如下面的算法所示，某些响应头不能被设置，并且要留给用户代理（user agent）设置。另外还有一些其它响应头，如果 send() 方法部分末尾所指出的那样，用户代理将不会被作者设置。
+> **注意：** 如下面的算法所示，某些响应头不能被设置，并且要留给用户代理（user agent）设置。另外还有一些其它响应头，如果 send() 方法部分末尾所指出的那样，用户代理将不会被作者设置。
 
 setRequestHeader (*name, value*) 方法将执行以下步骤：
 
@@ -369,81 +369,81 @@ send(*body*) 方法执行时，会执行以下步骤：
 
 10. 如果同步标志未设置，则执行以下步骤：
 
-  1. 触发使用 0 和 0 的名称为 loadstart  的 progress 事件。
+ 1. 触发使用 0 和 0 的名称为 loadstart  的 progress 事件。
 
-  2. 如果 upload 完成标志未设置，并且设置了 upload 监听器标志，则在XMLHttpRequestUpload 对象上使用 0 和 *req* 的正文字节触发名为 loadstart 的进度事件。
+ 2. 如果 upload 完成标志未设置，并且设置了 upload 监听器标志，则在XMLHttpRequestUpload 对象上使用 0 和 *req* 的正文字节触发名为 loadstart 的进度事件。
 
-  3. 如果当前状态不为 *opened* 或者 send() 标志未设置，则返回。
+ 3. 如果当前状态不为 *opened* 或者 send() 标志未设置，则返回。
 
-  4. 获取 *req* 。处理在下面的网络任务源上排队的任务。
+ 4. 获取 *req* 。处理在下面的网络任务源上排队的任务。
 
-     并行运行这些子步骤：
+    并行运行这些子步骤：
 
-     1. 等待，直到 *req* 完成标志被设置或者
-        1. timeout 属性值从这些子程序开始已经过去的毫秒数
-        2. 当 timeout 属性值不为零。
+    1. 等待，直到 *req* 完成标志被设置或者
+       1. timeout 属性值从这些子程序开始已经过去的毫秒数
+       2. 当 timeout 属性值不为零。
 
-     要处理 *request*  请求主体，就会运行以下子步骤：
+    要处理 *request*  请求主体，就会运行以下子步骤：
 
-     1. 如果从上次调用这些子程序以来，如果不是大约 50ms 已经过去，请终止这些子程序。
+    1. 如果从上次调用这些子程序以来，如果不是大约 50ms 已经过去，请终止这些子程序。
 
-     2. 如果 upload 监听标志被设置，那么触发一个名为 progress 的进度事件在 `XMLHttpRequestUpload` 对象上，它带着 *request*  的主体的传输字节和 *request*  的正文的总字节。
+    2. 如果 upload 监听标志被设置，那么触发一个名为 progress 的进度事件在 `XMLHttpRequestUpload` 对象上，它带着 *request*  的主体的传输字节和 *request*  的正文的总字节。
 
-        > 注意：只有当发送新的字节时，才会调用这些子信息。
+       > 注意：只有当发送新的字节时，才会调用这些子信息。
 
-     如果要处理 *request*  的请求终端请求，请运行以下子步骤：
+    如果要处理 *request*  的请求终端请求，请运行以下子步骤：
 
-     1. 设置 upload 完成标志。
-     2. 如果 upload 监听标志未设置，然后终止这些子步骤。
-     3. 使 *transmitted* 为  *request*  的主体的传输字节。
-     4. 使 *length* 为 *request*  的主体的总子节。
-     5. 在携带 *transmitted* 和 *length* 的 `XMLHttpRequestUpload` 对象上触发一个名为 progress 的进度事件。
-     6. 在携带 *transmitted* 和 *length* 的 `XMLHttpRequestUpload` 对象上触发一个名为 load的进度事件。
-     7. 在携带 *transmitted* 和 *length* 的 `XMLHttpRequestUpload` 对象上触发一个名为 loadend 的进度事件。
+    1. 设置 upload 完成标志。
+    2. 如果 upload 监听标志未设置，然后终止这些子步骤。
+    3. 使 *transmitted* 为  *request*  的主体的传输字节。
+    4. 使 *length* 为 *request*  的主体的总子节。
+    5. 在携带 *transmitted* 和 *length* 的 `XMLHttpRequestUpload` 对象上触发一个名为 progress 的进度事件。
+    6. 在携带 *transmitted* 和 *length* 的 `XMLHttpRequestUpload` 对象上触发一个名为 load的进度事件。
+    7. 在携带 *transmitted* 和 *length* 的 `XMLHttpRequestUpload` 对象上触发一个名为 loadend 的进度事件。
 
-     如果要处理 *response* 的响应，则运行以下子步骤：
+    如果要处理 *response* 的响应，则运行以下子步骤：
 
-     1. 如果停止 timeout 标志未设置，则设置停止 timeout 标志。
+    1. 如果停止 timeout 标志未设置，则设置停止 timeout 标志。
 
-     2. 为 *response* 设置响应。
+    2. 为 *response* 设置响应。
 
-     3. 为 *response* 处理错误信息。
+    3. 为 *response* 处理错误信息。
 
-     4. 如果响应产生了网络错误，则返回。
+    4. 如果响应产生了网络错误，则返回。
 
-        > 注：网络错误是指 status 始终为 0 的状态消息，状态消息始终为空字节序列，头列表始终为空，主体始终为空，头列表始终为空。
+       > 注：网络错误是指 status 始终为 0 的状态消息，状态消息始终为空字节序列，头列表始终为空，主体始终为空，头列表始终为空。
 
-     5. 设置 state 为 *headers received* 。
+    5. 设置 state 为 *headers received* 。
 
-     6. 触发名为 readystatechange 事件。
+    6. 触发名为 readystatechange 事件。
 
-     7. 如果 state 不为 *headers received* ，则返回。
+    7. 如果 state 不为 *headers received* ，则返回。
 
-     8. 如果 *response* 的主体为空，那么则运行处理响应终端（response end-of-body）并返回。
+    8. 如果 *response* 的主体为空，那么则运行处理响应终端（response end-of-body）并返回。
 
-     9. 使 *reader* 为从 *response* 的主体的 stream 中得到的 reader 的结果。
+    9. 使 *reader* 为从 *response* 的主体的 stream 中得到的 reader 的结果。
 
-        > 注意：此操作将不会抛出异常。
+       > 注意：此操作将不会抛出异常。
 
-     10. 使 *read* 为从携带 *reader* 的 *response* 的主体中的 reading of chunk 的结果。
+    10. 使 *read* 为从携带 *reader* 的 *response* 的主体中的 reading of chunk 的结果。
 
-        当 *read* 为带着 `done` 属性为 false 并且 `value` 属性为 `Uint8Array` 对象的对象完成时，运行这些子步骤，然后再次运行上面的子步骤：
+      当 *read* 为带着 `done` 属性为 false 并且 `value` 属性为 `Uint8Array` 对象的对象完成时，运行这些子步骤，然后再次运行上面的子步骤：
 
-        1. 添加 `value` 属性给 received bytes。
+      1. 添加 `value` 属性给 received bytes。
 
-        2. 如果从上次调用这些子程序以来，如果不是大约 50ms 已经过去，请终止这些子程序。
+      2. 如果从上次调用这些子程序以来，如果不是大约 50ms 已经过去，请终止这些子程序。
 
-        3. 如果 state 为 *headers received* ，设置 state 为 *loading* 状态。
+      3. 如果 state 为 *headers received* ，设置 state 为 *loading* 状态。
 
-        4. 触发名为 readystatechange 事件。
+      4. 触发名为 readystatechange 事件。
 
-        5. 触发一个名为 progress 的进度事件在 `XMLHttpRequestUpload` 对象上，它带着 *request*  的主体的传输字节和 *request*  的正文的总字节。
+      5. 触发一个名为 progress 的进度事件在 `XMLHttpRequestUpload` 对象上，它带着 *request*  的主体的传输字节和 *request*  的正文的总字节。
 
-           > 注意：仅当传输新的字节时，才会调用这些子条目。
+         > 注意：仅当传输新的字节时，才会调用这些子条目。
 
-     当 *read* 带着 `done` 属性为 true 的对象完成（fulfilled）时，则运行 *response* 的处理响应终端。
+    当 *read* 带着 `done` 属性为 true 的对象完成（fulfilled）时，则运行 *response* 的处理响应终端。
 
-     当 *read* 带着异常失败（rejected）时，则运行 *response* 的处理响应终端。
+    当 *read* 带着异常失败（rejected）时，则运行 *response* 的处理响应终端。
 
 11. 否则，如果同步标志设置时，则运行以下子步骤：
 
