@@ -1,90 +1,45 @@
-class ObserverList {
+const isFunction = function(obj) {
+  return typeof obj === 'function' || false;
+};
+
+class EventEmitter {
   constructor() {
-    this.observerList = [];
+    this.observerList = new Map();
+  }
+  add(label, callback) {
+    this.observerList.has(label) || this.observerList.set(label, []);
+    this.observerList.get(label).push(callback);
   }
 
-  Add(obj) {
-    return this.observerList.push(obj);
-  }
+  remove(label, callback) {
+    let observerList = this.observerList.get(label),
+      index;
 
-  Empty() {
-    this.observerList = [];
-  }
+    if (observerList && observerList.length) {
+      index = observerList.reduce((i, listener, index) => {
+        return (isFunction(listener) && listener === callback) ?
+          i = index :
+          i;
+      }, -1);
 
-  Count() {
-    return this.observerList.length;
-  }
-
-  Get(index) {
-    if(index > -1 && index < this.observerList.length) {
-      return this.observerList[index];
-    }
-  }
-
-  Insert(obj, index) {
-    let pointer = -1;
-
-    if(index === 0) {
-      this.observerList.unshift(obj);
-      pointer = index;
-    } else if(index === this.observerList.length) {
-      this.observerList.push(obj);
-      pointer = index;
-    }
-
-    return pointer;
-  }
-
-  IndexOf(obj, startIndex) {
-    let i = startIndex, pointer = -1;
-
-    while(i < this.observerList.length) {
-      if(this.observerList[i] === obj) {
-        pointer = i;
+      if (index > -1) {
+        observerList.splice(index, 1);
+        this.observerList.set(label, observerList);
+        return true;
       }
-
-      i++;
     }
-
-    return pointer;
+    return false;
   }
+  
+  emit(label, ...args) {
+    let observerList = this.observerList.get(label);
 
-  RemoveIndexAt(index) {
-    if(index === 0) {
-      this.observerList.shift();
-    } else if(index === this.observerList.length - 1) {
-      this.observerList.pop();
+    if (observerList && observerList.length) {
+      observerList.forEach((listener) => {
+        listener(...args);
+      });
+      return true;
     }
-  }
-}
-
-class Subject {
-  constructor() {
-    this.observers = new ObserverList();
-  }
-
-  AddObserver(observer) {
-    this.observers.Add(observer);
-  }
-
-  RemoveObserver(observer) {
-    this.observers.RemoveIndexAt(this.observers.IndexOf(observer, 0));
-  }
-
-  Notify(context) {
-    const observerCount = this.observers.Count();
-    for(let i = 0; i < observerCount.length; i++) {
-      this.observers.Get(i).Update(context);
-    }
-  }
-}
-
-class Observer {
-
-}
-
-function extend(obj, extension) {
-  for(let key in obj) {
-    extension[key] = obj[key];
+    return false;
   }
 }
