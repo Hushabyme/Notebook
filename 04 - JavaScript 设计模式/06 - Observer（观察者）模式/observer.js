@@ -17,9 +17,9 @@ class EventEmitter {
 
     if (observerList && observerList.length) {
       index = observerList.reduce((i, listener, index) => {
-        return (isFunction(listener) && listener === callback) ?
-          i = index :
-          i;
+        return (isFunction(listener) && listener === callback)
+          ? i = index
+          : i;
       }, -1);
 
       if (index > -1) {
@@ -30,7 +30,7 @@ class EventEmitter {
     }
     return false;
   }
-  
+
   emit(label, ...args) {
     let observerList = this.observerList.get(label);
 
