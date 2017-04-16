@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="simple-pubSub.js"></script>
+</head>
+<body>
+
+<script>
+  const event = new EventBus();
+
+  event.subscribe('example', (name, data) => console.log(`${name}: ${data}`));
+
+  event.publish('example', 'good');
+</script>
+</body>
+</html>
