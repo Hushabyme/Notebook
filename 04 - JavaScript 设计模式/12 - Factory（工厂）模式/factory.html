@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!--<script src="factory.js"></script>-->
+  <script src="simple-class.js"></script>
+</head>
+<body>
+  <button id="btn">点击</button>
+
+  <script>
+    const btn = document.querySelector('#btn');
+
+//    const myDog = new Dog();
+//    btn.addEventListener('click', myDog.bark);
+
+//    const myDog = dog();
+//    btn.addEventListener('click', myDog.bark);
+
+    const myDog1 = create(Dog);
+    btn.addEventListener('click', () => myDog1.bark());
+  </script>
+</body>
+</html>

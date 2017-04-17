@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90de4426-471c-4e04-96bd-d45c75bc93f7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 - JavaScript 设计模式/11 - Facade（外观）模式/facade.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 - JavaScript 设计模式/11 - Facade（外观）模式/facade.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 - JavaScript 设计模式/12 - Factory（工厂）模式/factory.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 - JavaScript 设计模式/12 - Factory（工厂）模式/factory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 - JavaScript 设计模式/12 - Factory（工厂）模式/setTimeout.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 - JavaScript 设计模式/12 - Factory（工厂）模式/simple-class.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,21 +22,41 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="facade.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/11 - Facade（外观）模式/facade.js">
+      <file leaf-file-name="simple-class.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/12 - Factory（工厂）模式/simple-class.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="1" />
+            <state relative-caret-position="330">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="12" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="facade.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/11 - Facade（外观）模式/facade.html">
+      <file leaf-file-name="factory.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/12 - Factory（工厂）模式/factory.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="427">
+              <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="21" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="setTimeout.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/12 - Factory（工厂）模式/setTimeout.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="factory.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/12 - Factory（工厂）模式/factory.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
-              <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="12" selection-end-column="11" />
+              <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -45,8 +67,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -103,6 +125,10 @@
         <option value="$PROJECT_DIR$/04 - JavaScript 设计模式/10 - Command（命令者）模式/command.js" />
         <option value="$PROJECT_DIR$/04 - JavaScript 设计模式/11 - Facade（外观）模式/facade.js" />
         <option value="$PROJECT_DIR$/04 - JavaScript 设计模式/11 - Facade（外观）模式/facade.html" />
+        <option value="$PROJECT_DIR$/04 - JavaScript 设计模式/12 - Factory（工厂）模式/setTimeout.js" />
+        <option value="$PROJECT_DIR$/04 - JavaScript 设计模式/12 - Factory（工厂）模式/factory.js" />
+        <option value="$PROJECT_DIR$/04 - JavaScript 设计模式/12 - Factory（工厂）模式/simple-class.js" />
+        <option value="$PROJECT_DIR$/04 - JavaScript 设计模式/12 - Factory（工厂）模式/factory.html" />
       </list>
     </option>
   </component>
@@ -184,7 +210,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="11 - Facade（外观）模式" />
+              <option name="myItemId" value="12 - Factory（工厂）模式" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -289,6 +315,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="90de4426-471c-4e04-96bd-d45c75bc93f7" name="Default" comment="" />
@@ -306,12 +335,12 @@
       <workItem from="1492046332167" duration="15815000" />
       <workItem from="1492234535094" duration="9305000" />
       <workItem from="1492343102309" duration="4325000" />
-      <workItem from="1492402358096" duration="5042000" />
+      <workItem from="1492402358096" duration="7975000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48715000" />
+    <option name="totallyTimeSpent" value="51648000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="7" />
@@ -683,6 +712,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="12" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/12 - Factory（工厂）模式/setTimeout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/12 - Factory（工厂）模式/factory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/12 - Factory（工厂）模式/simple-class.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="12" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/12 - Factory（工厂）模式/factory.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="21" selection-end-column="55" />
           <folding />
         </state>
       </provider>
