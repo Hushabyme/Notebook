@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90de4426-471c-4e04-96bd-d45c75bc93f7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 - JavaScript 设计模式/14 - Decorator（装饰者）模式/coffee-decorator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 - JavaScript 设计模式/14 - Decorator（装饰者）模式/simple-decorator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 - JavaScript 设计模式/14 - Decorator（装饰者）模式/simple-mixin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 - JavaScript 设计模式/15 - Flyweight（享元）模式/flyweight.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/04 - JavaScript 设计模式/15 - Flyweight（享元）模式/flywight.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,31 +20,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="simple-mixin.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/14 - Decorator（装饰者）模式/simple-mixin.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="759">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="simple-decorator.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/14 - Decorator（装饰者）模式/simple-decorator.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="27" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="coffee-decorator.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/14 - Decorator（装饰者）模式/coffee-decorator.js">
+      <file leaf-file-name="flyweight.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/15 - Flyweight（享元）模式/flyweight.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="36" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="flywight.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/15 - Flyweight（享元）模式/flywight.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="394">
+              <caret line="18" column="9" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="18" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -56,8 +45,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -123,6 +112,8 @@
         <option value="$PROJECT_DIR$/04 - JavaScript 设计模式/14 - Decorator（装饰者）模式/simple-mixin.js" />
         <option value="$PROJECT_DIR$/04 - JavaScript 设计模式/14 - Decorator（装饰者）模式/simple-decorator.js" />
         <option value="$PROJECT_DIR$/04 - JavaScript 设计模式/14 - Decorator（装饰者）模式/coffee-decorator.js" />
+        <option value="$PROJECT_DIR$/04 - JavaScript 设计模式/15 - Flyweight（享元）模式/flyweight.js" />
+        <option value="$PROJECT_DIR$/04 - JavaScript 设计模式/15 - Flyweight（享元）模式/flywight.html" />
       </list>
     </option>
   </component>
@@ -204,7 +195,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="14 - Decorator（装饰者）模式" />
+              <option name="myItemId" value="15 - Flyweight（享元）模式" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -330,12 +321,12 @@
       <workItem from="1492234535094" duration="9305000" />
       <workItem from="1492343102309" duration="4325000" />
       <workItem from="1492402358096" duration="9341000" />
-      <workItem from="1492489152398" duration="2160000" />
+      <workItem from="1492489152398" duration="3104000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55174000" />
+    <option name="totallyTimeSpent" value="56118000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="7" />
@@ -370,15 +361,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/06 - Observer（观察者）模式/simple-observer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2805">
-          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="89" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/06 - Observer（观察者）模式/observer-html.html" />
     <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/02 - Constructor（构造器）模式/simple-constructor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -658,6 +640,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -665,6 +648,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="12" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -718,7 +702,7 @@
     <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/14 - Decorator（装饰者）模式/simple-mixin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="759">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -735,6 +719,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/15 - Flyweight（享元）模式/flyweight.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04 - JavaScript 设计模式/15 - Flyweight（享元）模式/flywight.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="18" column="9" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="18" selection-end-column="9" />
           <folding />
         </state>
       </provider>
