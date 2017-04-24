@@ -14,13 +14,13 @@ HTTP 协议和 TCP/IP 协议族内的其他众多的协议相同， 用于客户
 
 图：请求必定由客户端发出， 而服务器端回复响应 
 
-![1](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\1.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/1.png)
 
 HTTP 协议规定，请求从客户端发出，最后服务器端响应该请求并返回。换句话说，肯定是先从客户端开始建立通信的，服务器端在没有接收到请求之前不会发送响应。
 
 下面我们来看一个具体案例。
 
-![2](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\2.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/2.png)
 
 从客户端发送给某个 HTTP 服务端的请求报文内容：
 
@@ -34,7 +34,7 @@ HTTP 协议规定，请求从客户端发出，最后服务器端响应该请求
 
 **请求报文是由请求方法、请求 URI、协议版本、可选的请求首部字段和内容实体构成的。** 
 
-![3](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\3.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/3.png)
 
 请求首部字段及内容实体稍后会作详细说明。接下来，我们继续讲解。接收到请求的服务器，会将请求内容的处理结果以响应的形式返回。 
 
@@ -55,7 +55,7 @@ HTTP 协议规定，请求从客户端发出，最后服务器端响应该请求
 
 响应的报文构成：
 
-![4](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\4.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/4.png)
 
 ## 2.3 HTTP 是不保存状态的协议 
 
@@ -81,23 +81,23 @@ HTTP 协议使用 URI 定位互联网上的资源。正是因为 URI 的特定�
 
 GET 方法用来请求访问已被 URI 识别的资源。指定的资源经服务器端解析后返回响应内容。也就是说，如果请求的资源是文本，那就保持原样返回；如果是像 CGI（Common Gateway Interface，通用网关接口）那样的程序，则返回经过执行后的输出结果。 
 
-![5](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\5.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/5.png)
 
 使用 GET 请求的两个示例：
 
-![6](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\6.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/6.png)
 
 #### 2. POST：传输实体主体 
 
 虽然用 GET 方法也可以传输实体的主体，但一般不用 GET 方法进行传输， 而是用 POST 方法。 虽说 POST 的功能与 GET 很相似，但 POST 的主要目的并不是获取响应的主体内容，而是传输主体内容。 
 
-![7](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\7.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/7.png)
 
 #### 3. PUT：传输文件 
 
 PUT 方法用来传输文件。就像 FTP 协议的文件上传一样，要求在请求报文的主体中包含文件内容，然后保存到请求 URI 指定的位置。 
 
-![8](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\8.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/8.png)
 
 但是，鉴于 HTTP/1.1 的 PUT 方法自身不带验证机制，任何人都可以上传文件 , 存在安全性问题，因此一般的 Web 网站不使用该方法。若配合 Web 应用程序的验证机制，或架构设计采用 RESTful（REpresentational State Transfer，表征状态转移）标准的同类Web 网站，就可能会开放使用 PUT 方法。 
 
@@ -105,7 +105,7 @@ PUT 方法用来传输文件。就像 FTP 协议的文件上传一样，要求�
 
 HEAD 方法和 GET 方法一样，只是不返回报文主体部分。用于确认 URI 的有效性及资源更新的日期时间等。 
 
-![9](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\9.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/9.png)
 
 #### 5. DELETE：删除文件 
 
@@ -113,13 +113,13 @@ DELETE 方法用来删除文件，是与 PUT 相反的方法。DELETE 方法按�
 
 但是， HTTP/1.1 的 DELETE 方法本身和 PUT 方法一样不带验证机制，所以一般的 Web 网站也不使用 DELETE 方法。当配合 Web 应用程序的验证机制，或遵守 REST 标准时还是有可能会开放使用的。 
 
-![10](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\10.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/10.png)
 
 #### 6. OPTIONS：询问支持的方法 
 
 OPTIONS 方法用来查询针对请求 URI 指定的资源支持的方法。 
 
-![11](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\11.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/11.png)
 
 #### 7. TRACE：追踪路径 
 
@@ -131,13 +131,13 @@ TRACE 方法是让 Web 服务器端将之前的请求通信环回给客户端的
 
 但是，TRACE 方法本来就不怎么常用，再加上它容易引发 XST（ Cross-Site Tracing， 跨站追踪）攻击，通常就更不会用到了。 
 
-![12](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\12.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/12.png)
 
 #### 8. CONNECT：要求用隧道协议连接代理 
 
 CONNECT 方法要求在与代理服务器通信时建立隧道，实现用隧道协议进行 TCP 通信。 主要使用 SSL（Secure Sockets Layer，安全套接层）和 TLS（Transport Layer Security，传输层安全）协议把通信内容加密后经网络隧道传输。 
 
-![13](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\13.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/13.png)
 
 **通常我们最常使用的就是 GET 和 POST  两种方法。**
 
@@ -147,7 +147,7 @@ CONNECT 方法要求在与代理服务器通信时建立隧道，实现用隧道
 
 方法的作用在于，可以指定请求的资源按期望产生某种行为。方法中有 GET、 POST 和 HEAD 等。 
 
-![14](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\14.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/14.png)
 
 ## 2.7 持久链接节省通信量
 
@@ -157,13 +157,13 @@ HTTP 协议的初始版本中，每进行一次 HTTP 通信就要断开一次 TC
 
 比如，使用浏览器浏览一个包含多张图片的 HTML页面时，在发送请求访问 HTML页面资源的同时，也会请求该 HTML页面里包含的其他资源。因此，每次的请求都会造成无谓的 TCP 连接建立和断开，增加通信量的开销。 
 
-![15](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\15.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/15.png)
 
 ### 2.7.1 持久连接
 
 为解决上述 TCP 连接的问题，HTTP/1.1 和一部分的 HTTP/1.0 想出了持久连接（ HTTP Persistent Connections，也称为 HTTP keep-alive 或 HTTP connection reuse） 的方法。持久连接的特点是，只要任意一端没有明确提出断开连接，则保持 TCP 连接状态。 
 
-![16](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\16.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/16.png)
 
 持久连接的好处在于减少了 TCP 连接的重复建立和断开所造成的额外开销，减轻了服务器端的负载。另外，减少开销的那部分时间，使HTTP 请求和响应能够更早地结束，这样 Web 页面的显示速度也就相应提高了。 
 
@@ -175,7 +175,7 @@ HTTP 协议的初始版本中，每进行一次 HTTP 通信就要断开一次 TC
 
 这就好比单线程与多线程的区别。
 
-![17](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\17.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/17.png)
 
 ## 2.8 使用 Cookie 的状态管理 
 
@@ -187,7 +187,7 @@ HTTP 是无状态协议，它不对之前发生过的请求和响应的状态进
 
 如果让服务器管理全部客户端的状态，则会成为巨大的负担：
 
-![18](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\18.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/18.png)
 
 保留无状态协议这个特征的同时又要解决类似的矛盾问题，于是引入了 Cookie 技术。 Cookie 技术通过在请求和响应报文中写入 Cookie 信息来控制客户端的状态。 
 
@@ -195,13 +195,13 @@ Cookie 会根据从服务器端发送的响应报文内的一个叫做 Set-Cooki
 
 - 没有 Cookie 信息状态下的请求
 
-![19](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\19.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/19.png)
 
 - 第 2 次以后（存有 Cookie 信息状态）的请求
 
-![20](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\20.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/20.png)
 
 上图展示了发生 Cookie 交互的情景， HTTP 请求报文和响应报文的内容如下。 
 
-![21](E:\Notebook\06 - 图解 HTTP\02 - 简单的 HTTP 协议\images\21.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/02%20-%20%E7%AE%80%E5%8D%95%E7%9A%84%20HTTP%20%E5%8D%8F%E8%AE%AE/images/21.png)
 
