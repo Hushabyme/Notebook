@@ -14,7 +14,7 @@ HTTP 报文本身是由多行（ 用 CR+LF 作换行符）数据构成的字符�
 
 HTTP 报文的结构图：
 
-![1](E:\Notebook\06 - 图解 HTTP\03 - HTTP 报文内的 HTTP 信息\images\1.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/03%20-%20HTTP%20%E6%8A%A5%E6%96%87%E5%86%85%E7%9A%84%20HTTP%20%E4%BF%A1%E6%81%AF/images/1.png)
 
 ## 3.2 请求报文及响应报文的结构  
 
@@ -22,11 +22,11 @@ HTTP 报文的结构图：
 
 请求报文（上）和响应报文（下）的结构： 
 
-![2](E:\Notebook\06 - 图解 HTTP\03 - HTTP 报文内的 HTTP 信息\images\2.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/03%20-%20HTTP%20%E6%8A%A5%E6%96%87%E5%86%85%E7%9A%84%20HTTP%20%E4%BF%A1%E6%81%AF/images/2.png)
 
 请求报文（上）和响应报文（下）的实例：
 
-![3](E:\Notebook\06 - 图解 HTTP\03 - HTTP 报文内的 HTTP 信息\images\3.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/03%20-%20HTTP%20%E6%8A%A5%E6%96%87%E5%86%85%E7%9A%84%20HTTP%20%E4%BF%A1%E6%81%AF/images/3.png)
 
 请求报文和响应报文的首部内容由以下数据组成。现在出现的各种首部字段及状态码稍后会进行阐述。 
 
@@ -75,7 +75,7 @@ HTTP 报文的主体用于传输请求或响应的实体主体。
 
 内容编码图：
 
-![4](E:\Notebook\06 - 图解 HTTP\03 - HTTP 报文内的 HTTP 信息\images\4.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/03%20-%20HTTP%20%E6%8A%A5%E6%96%87%E5%86%85%E7%9A%84%20HTTP%20%E4%BF%A1%E6%81%AF/images/4.png)
 
 常见的内容编码有以下几种：
 
@@ -90,7 +90,7 @@ HTTP 报文的主体用于传输请求或响应的实体主体。
 
 这种把实体主体分块的功能称为分块传输编码（Chunked Transfer Coding）。  
 
-![5](E:\Notebook\06 - 图解 HTTP\03 - HTTP 报文内的 HTTP 信息\images\5.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/03%20-%20HTTP%20%E6%8A%A5%E6%96%87%E5%86%85%E7%9A%84%20HTTP%20%E4%BF%A1%E6%81%AF/images/5.png)
 
 分块传输编码会将实体主体分成多个部分（块）。每一块都会用十六进制来标记块的大小，而实体主体的最后一块会使用“0(CR+LF)”来标记。 
 
@@ -116,13 +116,13 @@ HTTP/1.1 中存在一种称为传输编码（Transfer Coding） 的机制，它�
 
 对一份 10 000 字节大小的资源，如果使用范围请求，可以只请求 5001~10 000 字节内的资源。 
 
-![6](E:\Notebook\06 - 图解 HTTP\03 - HTTP 报文内的 HTTP 信息\images\6.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/03%20-%20HTTP%20%E6%8A%A5%E6%96%87%E5%86%85%E7%9A%84%20HTTP%20%E4%BF%A1%E6%81%AF/images/6.png)
 
 执行范围请求时，会用到首部字段 Range 来指定资源的 byte 范围。 
 
 byte 范围的指定形式如下： 
 
-![7](E:\Notebook\06 - 图解 HTTP\03 - HTTP 报文内的 HTTP 信息\images\7.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/03%20-%20HTTP%20%E6%8A%A5%E6%96%87%E5%86%85%E7%9A%84%20HTTP%20%E4%BF%A1%E6%81%AF/images/7.png)
 
 针对范围请求， 响应会返回状态码为 206 Partial Content 的响应报文。另外，对于多重范围的范围请求，响应会在首部字段 ContentType 标明 multipart/byteranges 后返回响应报文。 
 
@@ -157,4 +157,3 @@ byte 范围的指定形式如下：
 3. **透明协商（Transparent Negotiation）** 
 
    是服务器驱动和客户端驱动的结合体，是由服务器端和客户端各自进行内容协商的一种方法。 
-
