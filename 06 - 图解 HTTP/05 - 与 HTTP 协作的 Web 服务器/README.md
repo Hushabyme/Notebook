@@ -8,7 +8,7 @@ HTTP/1.1 规范允许一台 HTTP 服务器搭建多个 Web 站点。比如，提
 
 即使物理层面只有一台服务器，但只要使用虚拟主机的功能，则可以假想已具有多台服务器。 
 
-![1](E:\Notebook\06 - 图解 HTTP\05 - 与 HTTP 协作的 Web 服务器\images\1.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/05%20-%20%E4%B8%8E%20HTTP%20%E5%8D%8F%E4%BD%9C%E7%9A%84%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/images/1.png)
 
 客户端使用 HTTP 协议访问服务器时，会经常采用类似 `www.hackr.jp` 这样的主机名和域名。 
 
@@ -28,13 +28,13 @@ HTTP 通信时，除客户端和服务器以外，还有一些用于通信数据
 
 代理是一种有转发功能的应用程序，它扮演了位于服务器和客户端“中间人”的角色，接收由客户端发送的请求并转发给服务器，同时也接收服务器返回的响应并转发给客户端。 
 
-![2](E:\Notebook\06 - 图解 HTTP\05 - 与 HTTP 协作的 Web 服务器\images\2.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/05%20-%20%E4%B8%8E%20HTTP%20%E5%8D%8F%E4%BD%9C%E7%9A%84%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/images/2.png)
 
 代理服务器的基本行为就是接收客户端发送的请求后转发给其他服务器。代理不改变请求 URI，会直接发送给前方持有资源的目标服务器。 
 
 持有资源实体的服务器被称为源服务器。从源服务器返回的响应经过代理服务器后再传给客户端。 
 
-![3](E:\Notebook\06 - 图解 HTTP\05 - 与 HTTP 协作的 Web 服务器\images\3.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/05%20-%20%E4%B8%8E%20HTTP%20%E5%8D%8F%E4%BD%9C%E7%9A%84%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/images/3.png)
 
 在 HTTP 通信过程中，可级联多台代理服务器。请求和响应的转发会经过数台类似锁链一样连接起来的代理服务器。转发时，需要附加Via 首部字段以标记出经过的主机信息。 
 
@@ -55,7 +55,7 @@ HTTP 通信时，除客户端和服务器以外，还有一些用于通信数据
 
 网关是转发其他服务器通信数据的服务器，接收从客户端发送来的请求时，它就像自己拥有资源的源服务器一样对请求进行处理。有时客户端可能都不会察觉，自己的通信目标是一个网关。 
 
-![4](E:\Notebook\06 - 图解 HTTP\05 - 与 HTTP 协作的 Web 服务器\images\4.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/05%20-%20%E4%B8%8E%20HTTP%20%E5%8D%8F%E4%BD%9C%E7%9A%84%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/images/4.png)
 
 网关的工作机制和代理十分相似。而网关能使通信线路上的服务器提供非 HTTP 协议服务。 
 
@@ -69,7 +69,7 @@ HTTP 通信时，除客户端和服务器以外，还有一些用于通信数据
 
 隧道本身不会去解析 HTTP 请求。也就是说，请求保持原样中转给之后的服务器。 隧道会在通信双方断开连接时结束。
 
-![5](E:\Notebook\06 - 图解 HTTP\05 - 与 HTTP 协作的 Web 服务器\images\5.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/05%20-%20%E4%B8%8E%20HTTP%20%E5%8D%8F%E4%BD%9C%E7%9A%84%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/images/5.png)
 
 ## 5.3 保存资源的缓存 
 
@@ -77,7 +77,7 @@ HTTP 通信时，除客户端和服务器以外，还有一些用于通信数据
 
 缓存服务器是代理服务器的一种，并归类在缓存代理类型中。换句话说，当代理转发从服务器返回的响应时，代理服务器将会保存一份资源的副本。 
 
-![6](E:\Notebook\06 - 图解 HTTP\05 - 与 HTTP 协作的 Web 服务器\images\6.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/05%20-%20%E4%B8%8E%20HTTP%20%E5%8D%8F%E4%BD%9C%E7%9A%84%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/images/6.png)
 
 缓存服务器的优势在于利用缓存可避免多次从源服务器转发资源。因此客户端可就近从缓存服务器上获取资源，而源服务器也不必多次处理相同的请求了。 
 
@@ -89,7 +89,7 @@ HTTP 通信时，除客户端和服务器以外，还有一些用于通信数据
 
 即使存在缓存，也会因为客户端的要求、缓存的有效期等因素，向源服务器确认资源的有效性。若判断缓存失效，缓存服务器将会再次从源服务器上获取“新”资源。 
 
-![7](E:\Notebook\06 - 图解 HTTP\05 - 与 HTTP 协作的 Web 服务器\images\7.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/05%20-%20%E4%B8%8E%20HTTP%20%E5%8D%8F%E4%BD%9C%E7%9A%84%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/images/7.png)
 
 ### 5.3.2 客户端的缓存  
 
@@ -99,5 +99,5 @@ HTTP 通信时，除客户端和服务器以外，还有一些用于通信数据
 
 另外，和缓存服务器相同的一点是，当判定缓存过期后，会向源服务器确认资源的有效性。若判断浏览器缓存失效，浏览器会再次请求新资源。 
 
-![8](E:\Notebook\06 - 图解 HTTP\05 - 与 HTTP 协作的 Web 服务器\images\8.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/05%20-%20%E4%B8%8E%20HTTP%20%E5%8D%8F%E4%BD%9C%E7%9A%84%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/images/8.png)
 
