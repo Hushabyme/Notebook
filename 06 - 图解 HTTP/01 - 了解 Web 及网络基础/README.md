@@ -10,7 +10,7 @@ Web 页面当然不能凭空显示出来。根据 Web 浏览器地址栏中指�
 
 像这种通过发送请求获取服务器资源的 Web 浏览器等，都可称为**客户端（ client）**。 最常见的要数我们平时使用的诸如 Google、Firefox、IE 等浏览器了。
 
-![1](E:\Notebook\06 - 图解 HTTP\01 - 了解 Web 及网络基础\images\1.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/01%20-%20%E4%BA%86%E8%A7%A3%20Web%20%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/images/1.png)
 
 Web 使用一种名为 HTTP（ HyperText Transfer Protocol，超文本传输协议 ）的协议作为规范，完成从客户端到服务器端等一系列运作流程。而协议是指规则的约定。可以说， Web 是建立在 HTTP 协议上通信的。 
 
@@ -90,7 +90,7 @@ TCP/IP 协议族各层的作用如下：
 
 ### 1.3.3 TCP/IP 通信传输流 
 
-![2](E:\Notebook\06 - 图解 HTTP\01 - 了解 Web 及网络基础\images\2.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/01%20-%20%E4%BA%86%E8%A7%A3%20Web%20%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/images/2.png)
 
 利用 TCP/IP 协议族进行网络通信时， 会通过分层顺序与对方进行通信。
 
@@ -100,7 +100,7 @@ TCP/IP 协议族各层的作用如下：
 
 如图所示：
 
-![3](E:\Notebook\06 - 图解 HTTP\01 - 了解 Web 及网络基础\images\3.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/01%20-%20%E4%BA%86%E8%A7%A3%20Web%20%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/images/3.png)
 
 发送端在层与层之间传输数据时，每经过一层时必定会被打上一个该层所属的首部信息。反之， 接收端在层与层传输数据时，每经过一层时会把对应的首部消去。这种把数据信息包装起来的做法称为**封装（encapsulate）**。 
 
@@ -126,7 +126,7 @@ IP 地址指明了节点被分配到的地址，MAC 地址是指网卡所属的�
 
 传输的大致情况如图所示：
 
-![4](E:\Notebook\06 - 图解 HTTP\01 - 了解 Web 及网络基础\images\4.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/01%20-%20%E4%BA%86%E8%A7%A3%20Web%20%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/images/4.png)
 
 这个状态是不是有点像发送快递的过程呢？从广州发往北京的快递，有时候不是直接到达的，而是要经过中途的许多个中转站，才能顺利将包裹送达目的地。
 
@@ -146,7 +146,7 @@ IP 地址指明了节点被分配到的地址，MAC 地址是指网卡所属的�
 
 三次握手的过程图：
 
-![5](E:\Notebook\06 - 图解 HTTP\01 - 了解 Web 及网络基础\images\5.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/01%20-%20%E4%BA%86%E8%A7%A3%20Web%20%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/images/5.png)
 
 正是由于这种特性的存在，所以这也是前端优化中最常做的工作之一 —— 减少请求次数。
 
@@ -168,13 +168,13 @@ IP 地址指明了节点被分配到的地址，MAC 地址是指网卡所属的�
 
 DNS 协议提供通过域名查找 IP 地址，或逆向从 IP 地址反查域名的服务。因此，我们要记住，它是双向解析，不是单向解析的。
 
-![6](E:\Notebook\06 - 图解 HTTP\01 - 了解 Web 及网络基础\images\6.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/01%20-%20%E4%BA%86%E8%A7%A3%20Web%20%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/images/6.png)
 
 ## 1.6 各种协议与 HTTP 协议的关系 
 
 学习了和 HTTP 协议密不可分的 TCP/IP 协议族中的各种协议后，我们再通过这张图来了解下 IP 协议、TCP 协议和 DNS 服务在使用 HTTP 协议的通信过程中各自发挥了哪些作用。 
 
-![7](E:\Notebook\06 - 图解 HTTP\01 - 了解 Web 及网络基础\images\7.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/01%20-%20%E4%BA%86%E8%A7%A3%20Web%20%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/images/7.png)
 
 ## 1.7 URI 和 URL 
 
@@ -210,6 +210,6 @@ URL 正是使用 Web 浏览器等访问 Web 页面时需要输入的网页地址
 
 让我们先来了解一下绝对 URI 的格式： 
 
-![8](E:\Notebook\06 - 图解 HTTP\01 - 了解 Web 及网络基础\images\8.png)
+![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/01%20-%20%E4%BA%86%E8%A7%A3%20Web%20%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/images/8.png)
 
 是不是很熟悉？每一天我们登录的网站的网址大部分都是这样的格式。因此，在这里，我们需要注意的就是区分每一个部分所指的含义是什么，这对于我们理解跨域有极大地帮助。
