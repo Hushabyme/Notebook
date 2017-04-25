@@ -12,7 +12,7 @@ HTTP 协议的请求和响应报文中必定包含 HTTP 首部， 只是我们�
 
 在请求中， HTTP 报文由方法、 URI、 HTTP 版本、 HTTP 首部字段等部分构成。 
 
-![2](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/06%20-%20HTTP%20%E9%A6%96%E9%83%A8/images/.png)
+![2](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/06%20-%20HTTP%20%E9%A6%96%E9%83%A8/images/2.png)
 
 下面的示例是访问 `http://hackr.jp` 时， 请求报文的首部信息。 
 
@@ -141,7 +141,7 @@ HTTP 首部字段将定义成缓存代理和非缓存代理的行为，分成 2 
 
 1. 当指定使用 public 指令时， 则明确表明其他用户也可利用缓存。
 
-2.  当指定 private 指令后， 响应只以特定的用户作为对象， 这与 public 指令的行为相反。 
+2. 当指定 private 指令后， 响应只以特定的用户作为对象， 这与 public 指令的行为相反。 
 
 3. 使用 no-cache 指令的目的是为了防止从缓存中返回过期的资源。
 
