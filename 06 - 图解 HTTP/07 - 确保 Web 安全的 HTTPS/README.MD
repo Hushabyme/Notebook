@@ -46,7 +46,7 @@ HTTP 协议的实现本身非常简单， 不论是谁发送过来的请求都�
 
 证书由值得信任的第三方机构颁发， 用以证明服务器和客户端是实际存在的。 另外， 伪造证书从技术角度来说是异常困难的一件事。 所以只要能够确认通信方（ 服务器或客户端） 持有的证书，即可判断通信方的真实意图。 
 
-![1](E:\Notebook\06 - 图解 HTTP\07 - 确保 Web 安全的 HTTPS\images\1.png)
+![1](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/07%20-%20%E7%A1%AE%E4%BF%9D%20Web%20%E5%AE%89%E5%85%A8%E7%9A%84%20HTTPS/images/1.png)
 
 通过使用证书， 以证明通信方就是意料中的服务器。 这对使用者个人来讲， 也减少了个人信息泄露的危险性。 
 
@@ -76,7 +76,7 @@ HTTP 协议的实现本身非常简单， 不论是谁发送过来的请求都�
 
 为了统一解决这些问题，需要在 HTTP 上再加入加密处理和认证等机制。 我们把添加了加密及认证机制的 HTTP 称为 HTTPS（ HTTP Secure） 。
 
-![2](E:\Notebook\06 - 图解 HTTP\07 - 确保 Web 安全的 HTTPS\images\2.png)
+![2](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/07%20-%20%E7%A1%AE%E4%BF%9D%20Web%20%E5%AE%89%E5%85%A8%E7%9A%84%20HTTPS/images/2.png)
 
 经常会在 Web 的登录页面和购物结算界面等使用 HTTPS 通信。使用 HTTPS 通信时，不再用 http://， 而是改用 https://。另外， 当浏览器访问 HTTPS 通信有效的 Web 网站时， 浏览器的地址栏内会出现一个带锁的标记。 对 HTTPS 的显示方式会因浏览器的不同而有所改变。
 
@@ -86,7 +86,7 @@ HTTPS 并非是应用层的一种新协议。 只是 HTTP 通信接口部分用 
 
 通常， HTTP 直接和 TCP 通信。 当使用 SSL时， 则演变成先和 SSL 通信， 再由 SSL 和 TCP 通信了。 **简言之， 所谓 HTTPS， 其实就是身披 SSL协议这层外壳的 HTTP**。
 
- ![3](E:\Notebook\06 - 图解 HTTP\07 - 确保 Web 安全的 HTTPS\images\3.png)
+ ![3](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/07%20-%20%E7%A1%AE%E4%BF%9D%20Web%20%E5%AE%89%E5%85%A8%E7%9A%84%20HTTPS/images/3.png)
 
 在采用 SSL后， HTTP 就拥有了 HTTPS 的加密、 证书和完整性保护这些功能。 
 
@@ -98,7 +98,7 @@ SSL是独立于 HTTP 的协议， 所以不光是 HTTP 协议， 其他运行在
 
 加密和解密同用一个密钥的方式称为共享密钥加密（Common key crypto system） ， 也被叫做对称密钥加密。
 
-![4](E:\Notebook\06 - 图解 HTTP\07 - 确保 Web 安全的 HTTPS\images\4.png)
+![4](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/07%20-%20%E7%A1%AE%E4%BF%9D%20Web%20%E5%AE%89%E5%85%A8%E7%9A%84%20HTTPS/images/4.png)
 
 
 
@@ -112,11 +112,11 @@ SSL是独立于 HTTP 的协议， 所以不光是 HTTP 协议， 其他运行在
 
 另外， 要想根据密文和公开密钥， 恢复到信息原文是异常困难的， 因为解密过程就是在对离散对数进行求值， 这并非轻而易举就能办到。 退一步讲， 如果能对一个非常大的整数做到快速地因式分解， 那么密码破解还是存在希望的。 但就目前的技术来看是不太现实的。 
 
-![5](E:\Notebook\06 - 图解 HTTP\07 - 确保 Web 安全的 HTTPS\images\5.png)
+![5](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/07%20-%20%E7%A1%AE%E4%BF%9D%20Web%20%E5%AE%89%E5%85%A8%E7%9A%84%20HTTPS/images/5.png)
 
 而 HTTPS 采用共享密钥加密和公开密钥加密两者并用的混合加密机制。 若密钥能够实现安全交换， 那么有可能会考虑仅使用公开密钥加密来通信。 但是公开密钥加密与共享密钥加密相比， 其处理速度要慢。 
 
-![6](E:\Notebook\06 - 图解 HTTP\07 - 确保 Web 安全的 HTTPS\images\6.png)
+![6](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/07%20-%20%E7%A1%AE%E4%BF%9D%20Web%20%E5%AE%89%E5%85%A8%E7%9A%84%20HTTPS/images/6.png)
 
 ### 7.2.4 证明公开密钥正确性的证书 
 
@@ -134,11 +134,11 @@ SSL是独立于 HTTP 的协议， 所以不光是 HTTP 协议， 其他运行在
 
 此处认证机关的公开密钥必须安全地转交给客户端。 使用通信方式时， 如何安全转交是一件很困难的事， 因此， 多数浏览器开发商发布版本时， 会事先在内部植入常用认证机关的公开密钥。 
 
-![7](E:\Notebook\06 - 图解 HTTP\07 - 确保 Web 安全的 HTTPS\images\7.png)
+![7](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/07%20-%20%E7%A1%AE%E4%BF%9D%20Web%20%E5%AE%89%E5%85%A8%E7%9A%84%20HTTPS/images/7.png)
 
 ### 7.2.5 HTTPS 的安全通信机制 
 
-![8](E:\Notebook\06 - 图解 HTTP\07 - 确保 Web 安全的 HTTPS\images\8.png)
+![8](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/07%20-%20%E7%A1%AE%E4%BF%9D%20Web%20%E5%AE%89%E5%85%A8%E7%9A%84%20HTTPS/images/8.png)
 
 **步骤 1：** 客户端通过发送 Client Hello 报文开始 SSL通信。 报文中包
 含客户端支持的 SSL的指定版本、 加密组件（ Cipher Suite） 列表（ 所
@@ -172,11 +172,10 @@ HTTPS 使用 SSL（ Secure Socket Layer） 和 TLS（ Transport Layer Security�
 
 HTTPS 也存在一些问题， 那就是当使用 SSL 时， 它的处理速度会变慢。 
 
-![9](E:\Notebook\06 - 图解 HTTP\07 - 确保 Web 安全的 HTTPS\images\9.png)
+![9](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/07%20-%20%E7%A1%AE%E4%BF%9D%20Web%20%E5%AE%89%E5%85%A8%E7%9A%84%20HTTPS/images/9.png)
 
 > 为什么不一直使用 HTTPS？
 >
 > 其中一个原因是， 因为与纯文本通信相比，加密通信会消耗更多的 CPU 及内存资源。 如果每次通信都加密， 会消耗相当多的资源， 平摊到一台计算机上时， 能够处理的请求数量必定也会随之减少。 
 >
 > 但是现在，官方推荐所有网站都升级到 HTTPS 通信以防止信息泄露。
-
