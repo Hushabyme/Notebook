@@ -4,11 +4,11 @@
 
 ## 1.1 使用 HTTP 协议访问 Web
 
-你知道当我们在网页浏览器（ Web browser） 的地址栏中输入 URL 时，Web 页面是如何呈现的吗？ 
+你知道当我们在网页浏览器（Web browser） 的地址栏中输入 URL 时，Web 页面是如何呈现的吗？ 
 
-Web 页面当然不能凭空显示出来。根据 Web 浏览器地址栏中指定的 URL，Web 浏览器从 Web 服务器端获取文件资源（ resource）等信息，从而显示出 Web 页面。
+Web 页面当然不能凭空显示出来。根据 Web 浏览器地址栏中指定的 URL，Web 浏览器从 Web 服务器端获取文件资源（resource）等信息，从而显示出 Web 页面。
 
-像这种通过发送请求获取服务器资源的 Web 浏览器等，都可称为**客户端（ client）**。 最常见的要数我们平时使用的诸如 Google、Firefox、IE 等浏览器了。
+像这种通过发送请求获取服务器资源的 Web 浏览器等，都可称为**客户端（client）**。 最常见的要数我们平时使用的诸如 Google、Firefox、IE 等浏览器了。
 
 ![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/01%20-%20%E4%BA%86%E8%A7%A3%20Web%20%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/images/1.png)
 
@@ -20,9 +20,9 @@ Web 使用一种名为 HTTP（ HyperText Transfer Protocol，超文本传输协�
 
 在深入学习 HTTP 之前，我们先来介绍一下 HTTP 诞生的背景。了解背景的同时也能了解当初制定 HTTP 的初衷，这样有助于我们更好地理解。 
 
-1989 年 3 月，互联网还只属于少数人。在这一互联网的黎明期，HTTP 诞生了。CERN（ 欧洲核子研究组织）的蒂姆 • 伯纳斯 - 李（ Tim BernersLee）博士提出了一种能让远隔两地的研究者们共享知识的设想。最初设想的基本理念是：借助多文档之间相互关联形成的超文本（ HyperText），连成可相互参阅的 WWW（ World Wide Web，万维网）。  
+1989 年 3 月，互联网还只属于少数人。在这一互联网的黎明期，HTTP 诞生了。CERN（欧洲核子研究组织）的蒂姆 • 伯纳斯 - 李（Tim BernersLee）博士提出了一种能让远隔两地的研究者们共享知识的设想。最初设想的基本理念是：借助多文档之间相互关联形成的超文本（ HyperText），连成可相互参阅的 WWW（ World Wide Web，万维网）。  
 
-现在已提出了 3 项 WWW 构建技术，分别是：把 SGML（ Standard Generalized Markup Language， 标准通用标记语言） 作为页面的文本标记语言的 HTML（HyperText Markup Language 超文本标记语言）；作为文档传递协议的 HTTP；指定文档所在地址的 URL（ Uniform Resource Locator， 统一资源定位符）。 
+现在已提出了 3 项 WWW 构建技术，分别是：把 SGML（Standard Generalized Markup Language， 标准通用标记语言） 作为页面的文本标记语言的 HTML（HyperText Markup Language 超文本标记语言）；作为文档传递协议的 HTTP；指定文档所在地址的 URL（Uniform Resource Locator， 统一资源定位符）。 
 
 1994 年 的 12 月，网景通信公司发布了 Netscape Navigator 1.0，1995年微软公司发布 Internet Explorer 1.0 和 2.0。
 
@@ -142,7 +142,7 @@ IP 地址指明了节点被分配到的地址，MAC 地址是指网卡所属的�
 
 1. 发送端首先发送一个带 SYN 标志的数据包给对方。
 2. 接收端收到后，回传一个带有 SYN/ACK 标志的数据包以示传达确认信息。
-3.  最后，发送端再回传一个带 ACK 标志的数据包， 代表“握手”结束。 
+3. 最后，发送端再回传一个带 ACK 标志的数据包， 代表“握手”结束。 
 
 三次握手的过程图：
 
