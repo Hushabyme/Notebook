@@ -12,7 +12,7 @@ Web 页面当然不能凭空显示出来。根据 Web 浏览器地址栏中指�
 
 ![](https://github.com/Hushabyme/Notebook/blob/master/06%20-%20%E5%9B%BE%E8%A7%A3%20HTTP/01%20-%20%E4%BA%86%E8%A7%A3%20Web%20%E5%8F%8A%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/images/1.png)
 
-Web 使用一种名为 HTTP（ HyperText Transfer Protocol，超文本传输协议 ）的协议作为规范，完成从客户端到服务器端等一系列运作流程。而协议是指规则的约定。可以说， Web 是建立在 HTTP 协议上通信的。 
+Web 使用一种名为 HTTP（ HyperText Transfer Protocol，超文本传输协议）的协议作为规范，完成从客户端到服务器端等一系列运作流程。而协议是指规则的约定。可以说， Web 是建立在 HTTP 协议上通信的。 
 
 > HTTP 通常被翻译为“超文本传输协议”，但这是不严谨的，从上述英文中我们可以看出，严谨的译名应为“超文本转移协议”。
 
