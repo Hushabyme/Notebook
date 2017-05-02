@@ -12,7 +12,7 @@ HTTP 报文是在 HTTP 应用程序之间发送的数据块。这些数据块以
 
 HTTP 使用术语流入（inbound）和流出（outbound）来描述事务处理（transaction）的方向。报文流入源端服务器，工作完成之后，会流回用户的 Agent 代理中。 
 
-![1](E:\Notebook\07 - HTTP 权威指南\03 - HTTP 报文\images\1.png)
+![1](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/03%20-%20HTTP%20%E6%8A%A5%E6%96%87/images/1.png)
 
 ### 3.1.2 报文向下游流动 
 
@@ -20,7 +20,7 @@ HTTP 报文会像河水一样流动。不管是请求报文还是响应报文，
 
 > 术语“上游”和“下游”都只与发送者和接收者有关。我们无法区分报文是发送给源端服务器的还是发送给客户端的，因为两者都是下游节点。 
 
-![2](E:\Notebook\07 - HTTP 权威指南\03 - HTTP 报文\images\2.png)
+![2](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/03%20-%20HTTP%20%E6%8A%A5%E6%96%87/images/2.png)
 
 ### 3.2 报文的组成部分 
 
@@ -38,7 +38,7 @@ HTTP 报文是简单的格式化数据块。
 
 图 3-5 展示了一些假想的请求和响应报文。 
 
-![3](E:\Notebook\07 - HTTP 权威指南\03 - HTTP 报文\images\3.png)
+![3](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/03%20-%20HTTP%20%E6%8A%A5%E6%96%87/images/3.png)
 
 ### 3.2.2 起始行 
 
@@ -119,7 +119,7 @@ HTTP 定义了一组被称为安全方法的方法。GET 方法和 HEAD 方法�
 
 GET 是最常用的方法。通常用于请求服务器发送某个资源。 
 
-![4](E:\Notebook\07 - HTTP 权威指南\03 - HTTP 报文\images\4.png)
+![4](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/03%20-%20HTTP%20%E6%8A%A5%E6%96%87/images/4.png)
 
 ### 3.3.3 HEAD
 
@@ -128,18 +128,18 @@ HEAD 方法与 GET 方法的行为很类似，但服务器在响应中只返回�
 使用 HEAD，可以：
 
 - 在不获取资源的情况下了解资源的情况（比如，判断其类型）。
--  通过查看响应中的状态码，看看某个对象是否存在。
+- 通过查看响应中的状态码，看看某个对象是否存在。
 - 通过查看首部，测试资源是否被修改了。 
 
 服务器开发者必须确保返回的首部与GET请求所返回的首部完全相同。 
 
-![5](E:\Notebook\07 - HTTP 权威指南\03 - HTTP 报文\images\5.png)
+![5](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/03%20-%20HTTP%20%E6%8A%A5%E6%96%87/images/5.png)
 
 ### 3.3.4 PUT 
 
 与 GET 从服务器读取文档相反，PUT 方法会向服务器写入文档。 
 
-![6](E:\Notebook\07 - HTTP 权威指南\03 - HTTP 报文\images\6.png)
+![6](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/03%20-%20HTTP%20%E6%8A%A5%E6%96%87/images/6.png)
 
 PUT 方法的语义就是让服务器用请求的主体部分来创建一个由所请求的 URL 命名的新文档，或者，如果那个 URL 已经存在的话，就用这个主体来替代它。 
 
@@ -149,7 +149,7 @@ PUT 方法的语义就是让服务器用请求的主体部分来创建一个由�
 
 POST 方法起初是用来向服务器输入数据的。实际上，通常会用它来支持 HTML 的表单。表单中填好的数据通常会被送给服务器，然后由服务器将其发送到它要去的地方。  
 
-![7](E:\Notebook\07 - HTTP 权威指南\03 - HTTP 报文\images\7.png)
+![7](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/03%20-%20HTTP%20%E6%8A%A5%E6%96%87/images/7.png)
 
 ### 3.3.6 TRACE 
 
@@ -157,7 +157,7 @@ POST 方法起初是用来向服务器输入数据的。实际上，通常会用
 
 TRACE 请求会在目的服务器端发起一个“环回”诊断。行程最后一站的服务器会弹回一条 TRACE 响应，并在响应主体中携带它收到的原始请求报文。这样客户端就可以查看在所有中间 HTTP 应用程序组成的请求 / 响应链上，原始报文是否，以及如何被毁坏或修改过。
 
-![8](E:\Notebook\07 - HTTP 权威指南\03 - HTTP 报文\images\8.png)
+![8](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/03%20-%20HTTP%20%E6%8A%A5%E6%96%87/images/8.png)
 
 TRACE 方法主要用于诊断；也就是说，用于验证请求是否如愿穿过了请求 / 响应链。它也是一种很好的工具，可以用来查看代理和其他应用程序对用户请求所产生效果。 
 
@@ -169,13 +169,13 @@ TRACE 请求中不能带有实体的主体部分。TRACE 响应的实体主体�
 
 OPTIONS 方法请求 Web 服务器告知其支持的各种功能。可以询问服务器通常支持哪些方法，或者对某些特殊资源支持哪些方法。（有些服务器可能只支持对一些特殊类型的对象使用特定的操作）。 
 
-![9](E:\Notebook\07 - HTTP 权威指南\03 - HTTP 报文\images\9.png)
+![9](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/03%20-%20HTTP%20%E6%8A%A5%E6%96%87/images/9.png)
 
 ### 3.3.8 DELETE 
 
 顾名思义，DELETE 方法所做的事情就是请服务器删除请求 URL 所指定的资源。但是，客户端应用程序无法保证删除操作一定会被执行。因为 HTTP 规范允许服务器在不通知客户端的情况下撤销请求。 
 
-![10](E:\Notebook\07 - HTTP 权威指南\03 - HTTP 报文\images\10.png)
+![10](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/03%20-%20HTTP%20%E6%8A%A5%E6%96%87/images/10.png)
 
 ### 3.3.9 扩展方法 
 
