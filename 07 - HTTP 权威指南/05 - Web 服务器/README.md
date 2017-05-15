@@ -4,7 +4,7 @@ Web 服务器会对 HTTP 请求进行处理并提供响应。术语“Web 服务
 
 ## 5.1 实际的 Web 服务器会做些什么 
 
-例 5-1 显示的 Perl 服务器是一个 Web 服务器的小例子。最先进的商用 Web 服务器要比它复杂得多，但它们确实执行了几项同样的任务![1](E:\Notebook\07 - HTTP 权威指南\05 - Web 服务器\images\1.png)
+例 5-1 显示的 Perl 服务器是一个 Web 服务器的小例子。最先进的商用 Web 服务器要比它复杂得多，但它们确实执行了几项同样的任务![1](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/05%20-%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/images/1.png)
 
 1. 建立连接——接受一个客户端连接，或者如果不希望与这个客户端建立连接，就将其关闭。 
 2. 接收请求——从网络中读取一条 HTTP 请求报文。 
@@ -34,7 +34,7 @@ Web 服务器可以随意拒绝或立即关闭任意一条连接。有些 Web �
 
 如果客户端支持 ident 协议，就在 TCP 端口 113 上监听 ident 请求。图 5-4 说明了 ident 协议是如何工作的。在图 5-4a 中，客户端打开了一条 HTTP 连接。然后，服务器打开自己到客户端 ident 服务器端口（113）的连接，发送一条简单的请求，询问与（由客户端和服务器端口号指定的）新连接相对应的用户名，并从客户端解析出包含用户名的响应。 
 
-![2](E:\Notebook\07 - HTTP 权威指南\05 - Web 服务器\images\2.png)
+![2](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/05%20-%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/images/2.png)
 
 ident 在组织内部可以很好地工作，但出于多种原因，在公共因特网上并不能很好地工作，原因包括： 
 
@@ -62,7 +62,7 @@ ident 在组织内部可以很好地工作，但出于多种原因，在公共�
 
 有些 Web 服务器还会用便于进行报文操作的内部数据结构来存储请求报文。比如，数据结构中可能包含有指向请求报文中各个片段的指针及其长度，这样就可以将这些首部存放在一个快速查询表中，以便快速访问特定首部的具体值了（参见图 5-6）。 
 
-![3](E:\Notebook\07 - HTTP 权威指南\05 - Web 服务器\images\3.png)
+![3](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/05%20-%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/images/3.png)
 
 ### 5.3.2 连接的输入/输出处理结构 
 
@@ -70,7 +70,7 @@ ident 在组织内部可以很好地工作，但出于多种原因，在公共�
 
 因为请求可能会在任意时刻到达，所以 Web 服务器会不停地观察有无新的 Web 请求。不同的 Web 服务器结构会以不同的方式为请求服务，如图 5-7 所示。 
 
-![4](E:\Notebook\07 - HTTP 权威指南\05 - Web 服务器\images\4.png)
+![4](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/05%20-%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/images/4.png)
 
 - **单线程 Web 服务器**（参见图 5-7a） 
 
@@ -106,7 +106,7 @@ Web 服务器支持各种不同类型的资源映射，但最简单的资源映�
 
 在图 5-8 中，有一条对 /specials/saw-blade.gif 的请求到达。这个例子中 Web 服务器的文档根目录为 /usr/local/httpd/files。Web 服务器会返回文件 /usr/local/httpd/files/specials/saw-blade.gif。 
 
-![5](E:\Notebook\07 - HTTP 权威指南\05 - Web 服务器\images\5.png)
+![5](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/05%20-%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/images/5.png)
 
 服务器要注意，不能让相对 URL 退到 docroot 之外，将文件系统的其余部分暴露出来。比如，大多数成熟的 Web 服务器都不允许这样的 URI 看到 Joe 的五金商店文档根目录上一级的文件。
 
@@ -120,7 +120,7 @@ http://www.joes-hardware.com/../
 
 图 5-9 中的服务器托管了两个站点：`www.joes-hardware.com` 和 `www.marys-antiques.com`。服务器可以通过 HTTP 的 Host 首部，或根据不同的 IP 地址来区分不同的 Web 站点。 
 
-![6](E:\Notebook\07 - HTTP 权威指南\05 - Web 服务器\images\6.png)
+![6](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/05%20-%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/images/6.png)
 
 对大多数 Web 服务器来说，配置虚拟托管的文档根目录是很简单的。 
 
@@ -129,7 +129,7 @@ http://www.joes-hardware.com/../
 Docroot 的另一种常见应用是在 Web 服务器上为人们提供私有的 Web 站点。通常会把那些以斜杠和波浪号（/~）开始，后面跟着用户名的 URI 映射为此用户的私有文档根目录。私有
 docroot 通常都是用户主目录下那个名为 public_html 的目录，但也可将其配置为其他值（参见图 5-10）。 
 
-![7](E:\Notebook\07 - HTTP 权威指南\05 - Web 服务器\images\7.png)
+![7](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/05%20-%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/images/7.png)
 
 ### 5.5.2 目录列表 
 
@@ -147,7 +147,7 @@ Web 服务器可以接收对目录 URL 的请求，其路径可以解析为一�
 
 Web 服务器还可以将 URI 映射为动态资源——也就是说，映射到按需动态生成内容的程序上去（参见图 5-11）。实际上，有一大类名为应用程序服务器的 Web 服务器会将 Web 服务器连接到复杂的后端应用程序上去。Web 服务器要能够分辨出资源什么时候是动态的，动态内容生成程序位于何处，以及如何运行那个程序。大多数 Web 服务器都提供了一些基本的机制以识别和映射动态资源。 
 
-![8](E:\Notebook\07 - HTTP 权威指南\05 - Web 服务器\images\8.png)
+![8](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/05%20-%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/images/8.png)
 
 ### 5.5.4 服务器端包含项 
 
@@ -175,7 +175,7 @@ Web 服务器还可以为特定资源进行访问控制。有请求到达，要�
 
 Web 服务器要负责确定响应主体的 MIME 类型。有很多配置服务器的方法可以将 MIME 类型与资源关联起来。 
 
-![9](E:\Notebook\07 - HTTP 权威指南\05 - Web 服务器\images\9.png)
+![9](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/05%20-%20Web%20%E6%9C%8D%E5%8A%A1%E5%99%A8/images/9.png)
 
 ### 5.6.3 重定向 
 
@@ -216,4 +216,3 @@ Web 服务器通过连接发送数据时也会面临与接收数据一样的问�
 ## 5.8 第七步——记录日志 
 
 最后，当事务结束时，Web 服务器会在日志文件中添加一个条目，来描述已执行的事务。大多数 Web 服务器都提供了几种日志配置格式。更多细节请参见第 21 章。 
-
