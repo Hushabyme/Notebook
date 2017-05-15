@@ -10,7 +10,7 @@ HTTP 规范对 HTTP 报文解释得很清楚，但对 HTTP 连接介绍的并不
 
 比如，你想要获取一个页面。浏览器收到这个 URL 时，会执行图 4-1 所示的步骤。第 (1) 〜 (3) 步会将服务器的 IP 地址和端口号从 URL 中分离出来。在第 (4) 步中建立到 Web 服务器的 TCP 连接，并在第 (5) 步通过这条连接发送一条请求报文。在第 (6) 步读取响应，并在第 (7) 步关闭连接。 
 
-![1](E:\Notebook\07 - HTTP 权威指南\04 - 连接管理\images\1.png)
+![1](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/04%20-%20%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86/images/1.png)
 
 ### 4.1.1 TCP的可靠数据管道 
 
@@ -22,11 +22,11 @@ TCP 为 HTTP 提供了一条可靠的比特传输管道。从 TCP 连接一端�
 
 TCP 的数据是通过名为 IP 分组（或 IP 数据报）的小数据块来发送的。这样的话，如图 4-3a 所示，HTTP 就是“HTTP over TCP over IP”这个“协议栈”中的最顶层了。其安全版本 HTTPS 就是在 HTTP 和 TCP 之间插入了一个（称为 TLS 或 SSL 的）密码加密层（图 4-3b）。 
 
-![2](E:\Notebook\07 - HTTP 权威指南\04 - 连接管理\images\2.png)
+![2](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/04%20-%20%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86/images/2.png)
 
 HTTP 要传送一条报文时，会以流的形式将报文数据的内容通过一条打开的 TCP 连接按序传输。TCP 收到数据流之后，会将数据流砍成被称作段的小数据块，并将段封装在 IP 分组中，通过因特网进行传输（参见图 4-4）。所有这些工作都是由 TCP/IP 软件来处理的，HTTP 程序员什么都看不到。 
 
-![3](E:\Notebook\07 - HTTP 权威指南\04 - 连接管理\images\3.png)
+![3](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/04%20-%20%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86/images/3.png)
 
 每个 TCP 段都是由 IP 分组承载，从一个 IP 地址发送到另一个 IP 地址的。每个 IP 分组中都包括： 
 
@@ -54,7 +54,7 @@ TCP 连接是通过 4 个值来识别的：
 
 图 4-1 显示了 Web 浏览器是如何用 HTTP 从 Joe 的五金商店下载 power-tools.html 页面的。图 4-6 中的伪代码说明了可以怎样通过套接字 API 来凸显客户端和服务器在实现 HTTP 事务时所应执行的步骤。 
 
-![4](E:\Notebook\07 - HTTP 权威指南\04 - 连接管理\images\4.png)
+![4](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/04%20-%20%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86/images/4.png)
 
 我们从 Web 服务器等待连接（参见图 4-6，S4）开始。客户端根据 URL 判定出 IP 地址和端口号，并建立一条到服务器的 TCP 连接（参见图 4-6，C3）。建立连接可能要花费一些时间，时间长短取决于服务器距离的远近、服务器的负载情况，以及因特网的拥挤程度。 
 
@@ -70,7 +70,7 @@ HTTP 紧挨着 TCP，位于其上层，所以 HTTP 事务的性能在很大程�
 
 我们来回顾一下，在 HTTP 请求的过程中会出现哪些网络时延，并以此开始我们的 TCP 性能之旅。图 4-7 描绘了 HTTP 事务主要的连接、传输以及处理时延。 
 
-![5](E:\Notebook\07 - HTTP 权威指南\04 - 连接管理\images\5.png)
+![5](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/04%20-%20%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86/images/5.png)
 
 注意，与建立 TCP 连接，以及传输请求和响应报文的时间相比，事务处理时间可能是很短的。除非客户端或服务器超载，或正在处理复杂的动态资源，**否则 HTTP 时延就是由 TCP 网络时延构成的**。 
 
@@ -94,7 +94,7 @@ HTTP 事务的时延有以下几种主要原因：
 
 建立一条新的 TCP 连接时，甚至是在发送任意数据之前，TCP 软件之间会交换一系列的 IP 分组，对连接的有关参数进行沟通（参见图 4-8）。如果连接只用来传送少量数据，这些交换过程就会严重降低 HTTP 的性能。 
 
-![6](E:\Notebook\07 - HTTP 权威指南\04 - 连接管理\images\6.png)
+![6](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/04%20-%20%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86/images/6.png)
 
 TCP 连接握手需要经过以下几个步骤：
 
@@ -167,7 +167,7 @@ Connection 首部可以承载 3 种不同类型的标签，因此有时会很令
 
 如果连接标签中包含了一个 HTTP 首部字段的名称，那么这个首部字段就包含了与一些连接有关的信息，不能将其转发出去。在将报文转发出去之前，必须删除 Connection 首部列出的所有首部字段。由于 Connection 首部可以防止无意中对本地首部的转发，因此将逐跳首部名放入 Connection 首部被称为“对首部的保护”。图 4-9 显示了一个这样的例子。 
 
-![7](E:\Notebook\07 - HTTP 权威指南\04 - 连接管理\images\7.png)
+![7](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/04%20-%20%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86/images/7.png)
 
 HTTP 应用程序收到一条带有 Connection 首部的报文时，接收端会解析发送端请求的所有选项，并将其应用。然后会在将此报文转发给下一跳地址之前，删除 Connection 首部以及 Connection 中列出的所有首部。而且，可能还会有少量没有作为 Connection 首部值列出，但一定不能被代理转发的逐跳首部。其中包括 Prxoy-Authenticate、Proxy-Connection、Transfer-Encoding 和 Upgrade。 
 
@@ -175,7 +175,7 @@ HTTP 应用程序收到一条带有 Connection 首部的报文时，接收端会
 
 如果只对连接进行简单的管理，TCP 的性能时延可能会叠加起来。比如，假设有一个包含了 3 个嵌入图片的 Web 页面。浏览器需要发起 4 个 HTTP 事务来显示此页面： 1 个用于顶层的 HTML 页面，3 个用于嵌入的图片。如果每个事务都需要（串行地建立）一条新的连接，那么连接时延和慢启动时延就会叠加起来（参见图 4-10）。 
 
-![8](E:\Notebook\07 - HTTP 权威指南\04 - 连接管理\images\8.png)
+![8](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/04%20-%20%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86/images/8.png)
 
 除了串行加载引入的实际时延之外，加载一幅图片时，页面上其他地方都没有动静 也会让人觉得速度很慢。 
 
@@ -189,7 +189,7 @@ HTTP 应用程序收到一条带有 Connection 首部的报文时，接收端会
 
 如图 4-11 所示，HTTP 允许客户端打开多条连接，并行地执行多个 HTTP 事务。在这个例子中，并行加载了四幅嵌入式图片，每个事务都有自己的 TCP 连接。 
 
-![9](E:\Notebook\07 - HTTP 权威指南\04 - 连接管理\images\9.png)
+![9](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/04%20-%20%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86/images/9.png)
 
 ### 4.4.1 并行连接可能会提高页面的加载速度 
 
@@ -197,7 +197,7 @@ HTTP 应用程序收到一条带有 Connection 首部的报文时，接收端会
 
 图 4-12 显示了并行连接的时间线，比图 4-10 要快得多。首先装载的是封闭的 HTML 页面，然后并行处理其余的 3 个事务，每个事务都有自己的连接。2 图片的装载是并行的，连接的时延也是重叠的。 
 
-![10](E:\Notebook\07 - HTTP 权威指南\04 - 连接管理\images\10.png)
+![10](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/04%20-%20%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86/images/10.png)
 
 ### 4.4.2 并行连接不一定更快 
 
@@ -235,7 +235,7 @@ Web 客户端经常会打开到同一个站点的连接。比如，一个 Web �
 
 图 4-13 显示了 keep-alive 连接的一些性能优点，图中将在串行连接上实现 4 个 HTTP 事务的时间线与在一条持久连接上实现同样事务所需的时间线进行了比较。  
 
-![11](E:\Notebook\07 - HTTP 权威指南\04 - 连接管理\images\11.png)
+![11](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/04%20-%20%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86/images/11.png)
 
 ### 4.5.3 Keep-Alive 操作 
 
@@ -245,7 +245,7 @@ keep-alive 已经不再使用了，而且在当前的 HTTP/1.1 规范中也没�
 
 如果服务器愿意为下一条请求将连接保持在打开状态，就在响应中包含相同的首部（参见图 4-14）。如果响应中没有 Connection: Keep-Alive 首部，客户端就认为服务器不支持 keep-alive，会在发回响应报文之后关闭连接。 
 
-![12](E:\Notebook\07 - HTTP 权威指南\04 - 连接管理\images\12.png)
+![12](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/04%20-%20%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86/images/12.png)
 
 ### 4.5.4 Keep-Alive 选项 
 
@@ -283,7 +283,7 @@ Keep-Alive: max=5, timeout=120
 
 问题出在代理上——尤其是那些不理解 Connection 首部，而且不知道在沿着转发链路将其发送出去之前，应该将该首部删除的代理。很多老的或简单的代理都是盲中继（blind relay），它们只是将字节从一个连接转发到另一个连接中去，不对 Connection 首部进行特殊的处理。 
 
-![13](E:\Notebook\07 - HTTP 权威指南\04 - 连接管理\images\13.png)
+![13](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/04%20-%20%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86/images/13.png)
 
 为避免此类代理通信问题的发生，现代的代理都绝不能转发 Connection 首部和所有名字出现在 Connection 值中的首部。因此，如果一个代理收到了一个 Connection: Keep-Alive 首部，是不应该转发 Connection 首部，或所有名为 Keep-Alive 的首部的。 
 
@@ -324,7 +324,7 @@ HTTP/1.1 允许在持久连接上可选地使用请求管道。这是相对于 k
 3. HTTP 客户端必须做好连接会在任意时刻关闭的准备，还要准备好重发所有未完成的管道化请求。如果客户端打开了一条持久连接，并立即发出了 10 条请求，服务器可能在只处理了，比方说，5 条请求之后关闭连接。剩下的 5 条请求会失败，客户端必须能够应对这些过早关闭连接的情况，重新发出这些请求。 
 4. HTTP 客户端不应该用管道化的方式发送会产生副作用的请求（比如 POST）。总之，出错的时候，管道化方式会阻碍客户端了解服务器执行的是一系列管道化请求中的哪一些。由于无法安全地重试 POST 这样的非幂等请求，所以出错时，就存在某些方法永远不会被执行的风险。 
 
-![14](E:\Notebook\07 - HTTP 权威指南\04 - 连接管理\images\14.png)
+![14](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/04%20-%20%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86/images/14.png)
 
 ## 4.7 关闭连接的奥秘  
 
@@ -367,7 +367,7 @@ close() 会将 TCP 连接的输入和输出信道都关闭了。这被称作“�
 还可以用套接字调用 shutdown() 单独关闭输入或输出信道。这被称为“半关闭”，如图 4-20b
 所示。 
 
-![15](E:\Notebook\07 - HTTP 权威指南\04 - 连接管理\images\15.png)
+![15](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/04%20-%20%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86/images/15.png)
 
 **（2）TCP关闭及重置错误** 
 
@@ -382,7 +382,7 @@ close() 会将 TCP 连接的输入和输出信道都关闭了。这被称作“�
 你已关闭的输入信道发送数据，操作系统就会向另一端的机器回送一条 TCP“连接被对端重
 置”的报文，如图 4-21 所示。大部分操作系统都会将这种情况作为很严重的错误来处理，删除对端还未读取的所有缓存数据。对管道化连接来说，这是非常糟糕的事情。 
 
-![16](E:\Notebook\07 - HTTP 权威指南\04 - 连接管理\images\16.png)
+![16](https://github.com/Hushabyme/Notebook/blob/master/07%20-%20HTTP%20%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/04%20-%20%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86/images/16.png)
 
 比如你已经在一条持久连接上发送了 10 条管道式请求了，响应也已经收到了，正在操作系统的缓冲区中存着呢（但应用程序还未将其读走）。现在，假设你发送了第 11 条请求，但服务器认为你使用这条连接的时间已经够长了，决定将其关闭。那么你的第 11 条请求就会被发送到一条已关闭的连接上去，并会向你回送一条重置信息。这个重置信息会清空你的输入缓冲区。 
 
